@@ -1,14 +1,292 @@
-\documentclass{article}
-\usepackage{graphicx} % Required for inserting images
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Masters/Doctoral Thesis 
+% LaTeX Template
+% Version 2.5 (27/8/17)
+%
+% This template was downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Version 2.x major modifications by:
+% Vel (vel@latextemplates.com)
+%
+% This template is based on a template by:
+% Steve Gunn (http://users.ecs.soton.ac.uk/srg/softwaretools/document/templates/)
+% Sunil Patel (http://www.sunilpatel.co.uk/thesis-template/)
+%
+% Template license:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\title{analyzer}
-\author{Angelo Trotta}
-\date{September 2024}
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[
+11pt, % The default document font size, options: 10pt, 11pt, 12pt
+oneside, % Two side (alternating margins) for binding by default, uncomment to switch to one side
+english, % ngerman for German
+onehalfspacing,%singlespacing, % Single line spacing, alternatives: onehalfspacing or doublespacing
+%draft, % Uncomment to enable draft mode (no pictures, no links, overfull hboxes indicated)
+%nolistspacing, % If the document is onehalfspacing or doublespacing, uncomment this to set spacing in lists to single
+%liststotoc, % Uncomment to add the list of figures/tables/etc to the table of contents
+%toctotoc, % Uncomment to add the main table of contents to the table of contents
+%parskip, % Uncomment to add space between paragraphs
+%nohyperref, % Uncomment to not load the hyperref package
+headsepline, % Uncomment to get a line under the header
+%chapterinoneline, % Uncomment to place the chapter title next to the number on one line
+%consistentlayout, % Uncomment to change the layout of the declaration, abstract and acknowledgements pages to match the default layout
+]{MastersDoctoralThesis} % The class file specifying the document structure
+\usepackage[utf8]{inputenc} % Required for inputting international characters
+\usepackage[T1]{fontenc} % Output font encoding for international characters
+\usepackage{mathpazo} % Use the Palatino font by default
+\usepackage[backend=bibtex,style=numeric,citestyle=numeric,natbib=true]{biblatex} % Use the bibtex backend with the authoryear citation style (which resembles APA)
+\usepackage[autostyle=true]{csquotes} % Required to generate language-dependent quotes in the bibliography
+\usepackage{enumitem} 
+\usepackage{listings}
+\usepackage{graphicx}
+\usepackage{xspace}
+\usepackage[export]{adjustbox}
+\usepackage{xcolor}
+\usepackage{amsmath}
+\usepackage[font={small}]{caption}
+\usepackage{varwidth}	
+\usepackage{supertabular}
+%\usepackage[caption=false]{subfig}
+\usepackage{float}
+%\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor, colortbl}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{xspace}
+\usepackage{caption}
+\usepackage{multicol}
+\usepackage{subcaption}
+\usepackage{footnote}
+\usepackage{url}
+\usepackage{gitinfo2}
+\usepackage{tcolorbox}
+\usepackage[para]{footmisc}
+\usepackage{array,ragged2e}
+
+\usepackage{listings}
+
+\usepackage{amssymb}
+\usepackage{ifthen}
+
+
+%%%%%%%%%% main %%%%%%%%%%
+\newcommand{\ie}{\emph{i.e.,}\xspace}
+\newcommand{\eg}{\emph{e.g.,}\xspace}
+\newcommand{\etc}{etc.\xspace}
+\newcommand{\etal}{\emph{et~al.}\xspace}
+\newcommand{\secref}[1]{Section~\ref{#1}\xspace}
+\newcommand{\capref}[1]{\textit{Chapter~\ref{#1}\xspace}}
+\newcommand{\figref}[1]{Fig.~\ref{#1}\xspace}
+\newcommand{\listref}[1]{Listing~\ref{#1}\xspace}
+\newcommand{\tabref}[1]{Table~\ref{#1}\xspace}
+\newcommand{\tool}[1]{{\sc #1}\xspace}
+\newcommand{\commitref}[1]{\texttt{#1}}
+
+%Experiement
+\newcommand{\totalCommits}{19,603,736\xspace}
+\newcommand{\validated}{3,585\xspace}
+\newcommand{\finalInstances}{1,930\xspace}
+\newcommand{\finalInstancesPercent}{55.6\%\xspace}
+\newcommand{\finalInstancesIssues}{224\xspace}
+\newcommand{\finalInstancesIssuesPercent}{11.2\%\xspace}
+\newcommand{\oracle}{1,115\xspace}
+\newcommand{\oracleWithIssue}{129\xspace}
+
+\input{macro}
+\newboolean{showcomments}
+
+
+\setboolean{showcomments}{true}
+
+\ifthenelse{\boolean{showcomments}}
+{\newcommand{\nb}[2]{
+		\fbox{\bfseries\sffamily\scriptsize#1}
+		{\sf\small$\blacktriangleright$\textit{#2}$\blacktriangleleft$}
+	}
+}
+{\newcommand{\nb}[2]{}
+}
+
+\newcommand{\bszz}{\textsc{B-SZZ}\xspace}
+\newcommand{\agszz}{\textsc{AG-SZZ}\xspace}
+\newcommand{\djszz}{\textsc{DJ-SZZ}\xspace}
+\newcommand{\rszz}{\textsc{R-SZZ}\xspace}
+\newcommand{\lszz}{\textsc{L-SZZ}\xspace}
+\newcommand{\maszz}{\textsc{MA-SZZ}\xspace}
+\newcommand{\raszz}{\textsc{RA-SZZ}\xspace}
+\newcommand{\raszzs}{\textsc{RA-SZZ\textsuperscript{*}}\xspace}
+
+\newcommand{\justcitebszz} {\cite{sliwerski2005changes}\xspace}
+\newcommand{\justciteagszz}{\cite{kim2006automatic}\xspace}
+\newcommand{\justcitedjszz}{\cite{williams2008szz}\xspace}
+\newcommand{\justciterlszz}{\cite{davies2014comparing}\xspace}
+\newcommand{\justcitemaszz}{\cite{da2016framework}\xspace}
+\newcommand{\justciteraszz}{\cite{neto2018impact}\xspace}
+\newcommand{\justciteraszzs}{\cite{neto2019revisiting}\xspace}
+
+\newcommand{\citeallszz}{\cite{sliwerski2005changes, kim2006automatic, williams2008szz, davies2014comparing, da2016framework, neto2018impact, neto2019revisiting}\xspace}
+\newcommand{\citeallimprovedszz}{\cite{kim2006automatic, williams2008szz, davies2014comparing, da2016framework, neto2018impact, neto2019revisiting}\xspace}
+
+\newcommand{\citebszz}{\'Sliwerski \etal \cite{sliwerski2005changes}\xspace}
+\newcommand{\citeagszz}{Kim \etal \cite{kim2006automatic}\xspace }
+\newcommand{\citedjszz}{Williams and Spacco \cite{williams2008szz}\xspace}
+\newcommand{\citerlszz}{Davies \etal \cite{davies2014comparing}\xspace}
+\newcommand{\citemaszz}{da Costa \etal \cite{da2016framework}\xspace}
+\newcommand{\citeraszz}{Neto \etal \cite{neto2018impact}\xspace}
+\newcommand{\citeraszzs}{Neto \etal \cite{neto2019revisiting}\xspace}
+
+
+%%%%%%%%%% introduction %%%%%%%%%%
+\newcommand{\manual}{Manually defined (researchers)\xspace}
+\newcommand{\bszzuses}{\cite{palomba2018diffuseness, pascarella2019fine, ccaglayan2016effect, wen2016locus, posnett2013dual, kim2008classifying, tan2015online, kononenko2015investigating, wehaibi2016examining, lenarduzzi2020sonarqube}}
+\newcommand{\agszzuses}{\cite{tufano2017empirical, bernardi2018relation, hata2012bug, rahman2011bugcache, eyolfson2014correlations, misirli2016studying, canfora2011long, prechelt2014software, bird2009fair}}
+\newcommand{\djszzuses}{\cite{marinescu2014covrig, borg2019szz, bavota2015four, toth2016public, fan2019impact, karampatsis2019often, rodriguez2020bugs, rodriguez2018reproducibility}}
+\newcommand{\rlszzuses}{\cite{da2016framework}}
+\newcommand{\maszzuses}{\cite{fan2019impact, neto2018impact, neto2019revisiting, tu2020better, aman2019empirical, chen2019extracting}}
+\newcommand{\raszzuses}{\cite{fan2019impact, neto2018impact, yan2020just}}
+\newcommand{\raszzsuses}{None}
+
+
+%%%%%%%%%% deisgn %%%%%%%%%%
+\newcommand{\rqOne}{How do different variants of SZZ perform in identifying bug-inducing changes?}
+\newcommand{\oracleAllDataset}{$\mathit{oracle}_{\mathit{all}}$\xspace}
+\newcommand{\oracleIssueDataset}{$\mathit{oracle}_{\mathit{issues}}$\space}
+\newcommand{\oracleAllDatasetJava}{$\mathit{oracle}_{\mathit{all}}^{J}$\xspace}
+\newcommand{\oracleIssueDatasetJava}{$\mathit{oracle}_{\mathit{issues}}^{J}$\space}
+
+\definecolor{Gray}{gray}{0.9}
+
+\lstset{
+	language=C,
+	%basicstyle=\small,
+	breaklines=true
+}
+
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+		T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+
+
+\addbibresource{references.bib} % The filename of the bibliography
+
+\graphicspath{
+	{Figures/}
+}
+
+\newcommand\TODO[1]{\textcolor{red}{\nb{TODO}{#1}}}
+
+\newenvironment{blueparagraph}{\par\color{blue}}{\par}
+\newenvironment{nscenter}
+{\parskip=0pt\par\nopagebreak\centering}
+{\par\noindent\ignorespacesafterend}
+
+%----------------------------------------------------------------------------------------
+%	MARGIN SETTINGS
+%----------------------------------------------------------------------------------------
+
+\geometry{
+	paper=a4paper, % Change to letterpaper for US letter
+	inner=2.5cm, % Inner margin
+	outer=3.8cm, % Outer margin
+	bindingoffset=.5cm, % Binding offset
+	top=1.5cm, % Top margin
+	bottom=1.5cm, % Bottom margin
+	%showframe, % Uncomment to show how the type block is set on the page
+}
+
+%----------------------------------------------------------------------------------------
+%	THESIS INFORMATION
+%----------------------------------------------------------------------------------------
+
+\thesistitle{Heuristic Analysis of Datasets for Lack of Comments Quality Identification} % Your thesis title, this is used in the title and abstract, print it elsewhere with \ttitle
+\supervisor{Prof. Simone \textsc{Scalabrino}} % Your supervisor's name, this is used in the title page, print it elsewhere with \supname
+\examiner{} % Your examiner's name, this is not currently used anywhere in the template, print it elsewhere with \examname
+\degree{Informatica} % Your degree name, this is used in the title page and abstract, print it elsewhere with \degreename
+\author{Angelo \textsc{Trotta}} % Your name, this is used in the title page and abstract, print it elsewhere with \authorname
+\addresses{} % Your address, this is not currently used anywhere in the template, print it elsewhere with \addressname
+
+\subject{Automated Software Delivery} % Your subject area, this is not currently used anywhere in the template, print it elsewhere with \subjectname
+\keywords{} % Keywords for your thesis, this is not currently used anywhere in the template, print it elsewhere with \keywordnames
+\university{\href{https://www.unimol.it/}{Università degli Studi del Molise}} % Your university's name and URL, this is used in the title page and abstract, print it elsewhere with \univname
+\department{\href{http://dipbioter.unimol.it/}{Dipartimento di Bioscienze e Territorio}} % Your department's name and URL, this is used in the title page and abstract, print it elsewhere with \deptname
+%\faculty{\href{http://faculty.university.com}{Faculty Name}} % Your faculty's name and URL, this is used in the title page and abstract, print it elsewhere with \facname
+
+\AtBeginDocument{
+	\hypersetup{pdftitle=\ttitle} % Set the PDF's title to your title
+	\hypersetup{pdfauthor=\authorname} % Set the PDF's author to your name
+	\hypersetup{pdfkeywords=\keywordnames} % Set the PDF's keywords to your keywords
+}
+
 
 \begin{document}
+	\renewenvironment{abstract} 
+	
+	\frontmatter % Use roman page numbering style (i, ii, iii, iv...) for the pre-content pages
+	
+	\pagestyle{plain} % Default to the plain heading style until the thesis style is called for the body content
+	
+	%----------------------------------------------------------------------------------------
+	%	TITLE PAGE
+	%----------------------------------------------------------------------------------------
+	
+	\begin{titlepage}
+		\begin{center}
+			
+			\includegraphics[width=0.35\textwidth]{figs/logo} % University/department logo - uncomment to place it
+			
+			\vspace{0.75cm}
 
-\maketitle
-
-\section{Introduction}
-
+			{\scshape\huge \univname\par}\vspace{0.15cm} % University name
+			
+			{\scshape\Large \deptname\par}\vspace{1cm} % University name
+			
+			\text{\Large Corso di Laurea in}\\[0.05cm]
+			
+			\textsc{\Large \degreename}\\[1cm]
+			
+			\text{\Large Tesi in}\\[0.05cm]
+			
+			\textsc{\Large \subjectname}\\[1cm] % Thesis type
+			
+			%\HRule \\[0.4cm] % Horizontal line
+			{\huge \bfseries \ttitle\par}\vspace{1.5cm} % Thesis title
+			%\HRule \\[1.5cm] % Horizontal line
+			
+			\begin{minipage}[t]{0.95\textwidth}
+					\Large \emph{Candidato:} \\
+					{\authorname}\\[0.1cm] % Author name - remove the \href bracket to remove the link
+					%\href bracket to remove the link 
+					\emph{Matricola:} {171874} 
+			\end{minipage}
+			\begin{minipage}[t]{0.95\textwidth}
+				\begin{flushright} \Large
+					\emph{Relatore:}\\
+					\href{https://dibt.unimol.it/staff/sscalabrino/home/}{\supname} % Supervisor name - remove the \href bracket to remove the link
+					\begin{flushright} \Large
+						\emph{Co-Relatore:}\\
+						\href{https://scholar.google.com/citations?user=AdVTnyQAAAAJ&hl=it}{Dr. Antonio \textsc{Vitale}} % Correlator name 
+					\end{flushright} 
+				\end{flushright}
+				%\begin{flushright} \large
+				%\emph{Co-Supervisor:} \\
+				%%\href{https://www.inf.usi.ch/faculty/bavota/}{Dr. Simone \textsc{Scalabrino}} \\% Correlator name 
+				%\href{https://dibt.unimol.it/staff/sscalabrino/home/}{Dr. Giovanni \textsc{Rosa}} % Correlator name 
+				
+				%\end{flushright}
+			\end{minipage}\\[1.5cm]
+			
+			\vfill
+			
+			\centerline{\Large Anno Accademico 2023/2024}
+		\end{center}
+	\end{titlepage}
 \end{document}

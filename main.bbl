@@ -1,0 +1,1303 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated as
+% required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+\datalist[entry]{nty/global//global/global}
+  \entry{nlu}{article}{}
+    \name{author}{4}{}{%
+      {{hash=AA}{%
+         family={Abdellatif},
+         familyi={A\bibinitperiod},
+         given={Ahmad},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=BK}{%
+         family={Badran},
+         familyi={B\bibinitperiod},
+         given={Khaled},
+         giveni={K\bibinitperiod},
+      }}%
+      {{hash=CD}{%
+         family={Costa},
+         familyi={C\bibinitperiod},
+         given={Diego},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=SE}{%
+         family={Shihab},
+         familyi={S\bibinitperiod},
+         given={Emad},
+         giveni={E\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {IEEE}%
+    }
+    \strng{namehash}{AA+1}
+    \strng{fullhash}{AABKCDSE1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{A}
+    \field{sortinithash}{A}
+    \field{title}{A Comparison of Natural Language Understanding Platforms for
+  Chatbots in Software Engineering}
+    \field{journaltitle}{IEEE Transactions on Software Engineering}
+    \field{year}{2021}
+  \endentry
+
+  \entry{amazonskillkit}{misc}{}
+    \name{author}{1}{}{%
+      {{hash=A}{%
+         family={"Amazon"},
+         familyi={A\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{A3}
+    \strng{fullhash}{A3}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{A}
+    \field{sortinithash}{A}
+  \field{howpublished}{\url{https://developer.amazon.com/en-US/docs/alexa/sdk/alexa-skills-kit-sdks.html.}}
+    \field{title}{{Alexa Skills Kit SDKs}}
+    \field{year}{2018}
+  \endentry
+
+  \entry{amazonask}{misc}{}
+    \name{author}{1}{}{%
+      {{hash=A}{%
+         family={{"Amazon"}},
+         familyi={A\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{A2}
+    \strng{fullhash}{A2}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{A}
+    \field{sortinithash}{A}
+  \field{howpublished}{\url{https://developer.amazon.com/en-US/docs/alexa/ask-overviews/what-is-the-alexa-skills-kit.html}}
+    \field{title}{{Amazon Alexa Official Site - ASK}}
+    \field{year}{2018}
+  \endentry
+
+  \entry{developerconsole}{misc}{}
+    \name{author}{1}{}{%
+      {{hash=A}{%
+         family={"Amazon"},
+         familyi={A\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{A1}
+    \strng{fullhash}{A1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{A}
+    \field{sortinithash}{A}
+    \field{howpublished}{\url{https://developer.amazon.com/it/}}
+    \field{title}{{Amazon Developer}}
+    \field{year}{2018}
+  \endentry
+
+  \entry{createslot}{misc}{}
+    \name{author}{1}{}{%
+      {{hash=A}{%
+         family={{"Amazon"}},
+         familyi={A\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{A2}
+    \strng{fullhash}{A2}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{A}
+    \field{sortinithash}{A}
+  \field{howpublished}{\url{https://developer.amazon.com/en-US/docs/alexa/custom-skills/create-intents-utterances-and-slots.html}}
+    \field{title}{{Create Intents, Utterances, and Slots 2020}}
+    \field{year}{2018}
+  \endentry
+
+  \entry{asktool}{misc}{}
+    \name{author}{1}{}{%
+      {{hash=A}{%
+         family={"Amazon"},
+         familyi={A\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{A3}
+    \strng{fullhash}{A3}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{A}
+    \field{sortinithash}{A}
+  \field{howpublished}{\url{https://developer.amazon.com/en-US/docs/alexa/tools/ask-tools.html}}
+    \field{title}{{Tools to Create and Manage Skills}}
+    \field{year}{2018}
+  \endentry
+
+  \entry{nluevaluation}{misc}{}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{A}
+    \field{sortinithash}{A}
+  \field{howpublished}{\url{https://developer.amazon.com/it-IT/docs/alexa/smapi/nlu-evaluation-tool-api.htm}}
+    \field{title}{Amazon NLU Evaluation Tool API}
+    \field{year}{2018}
+  \endentry
+
+  \entry{oracle}{article}{}
+    \name{author}{5}{}{%
+      {{hash=BET}{%
+         family={Barr},
+         familyi={B\bibinitperiod},
+         given={Earl\bibnamedelima T},
+         giveni={E\bibinitperiod\bibinitdelim T\bibinitperiod},
+      }}%
+      {{hash=HM}{%
+         family={Harman},
+         familyi={H\bibinitperiod},
+         given={Mark},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=MP}{%
+         family={McMinn},
+         familyi={M\bibinitperiod},
+         given={Phil},
+         giveni={P\bibinitperiod},
+      }}%
+      {{hash=SM}{%
+         family={Shahbaz},
+         familyi={S\bibinitperiod},
+         given={Muzammil},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=YS}{%
+         family={Yoo},
+         familyi={Y\bibinitperiod},
+         given={Shin},
+         giveni={S\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {IEEE}%
+    }
+    \strng{namehash}{BET+1}
+    \strng{fullhash}{BETHMMPSMYS1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{B}
+    \field{sortinithash}{B}
+    \field{number}{5}
+    \field{pages}{507\bibrangedash 525}
+    \field{title}{The oracle problem in software testing: A survey}
+    \field{volume}{41}
+    \field{journaltitle}{IEEE transactions on software engineering}
+    \field{year}{2014}
+  \endentry
+
+  \entry{bespoken}{misc}{}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{B}
+    \field{sortinithash}{B}
+    \field{howpublished}{\url{https://bespoken.io/}}
+    \field{title}{Bespoken}
+  \endentry
+
+  \entry{botium}{misc}{}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{B}
+    \field{sortinithash}{B}
+    \field{howpublished}{\url{https://www.botium.ai/}}
+    \field{title}{Botium}
+  \endentry
+
+  \entry{chatbot}{inproceedings}{}
+    \name{author}{3}{}{%
+      {{hash=BJ}{%
+         family={Bozic},
+         familyi={B\bibinitperiod},
+         given={Josip},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=TOA}{%
+         family={Tazl},
+         familyi={T\bibinitperiod},
+         given={Oliver\bibnamedelima A},
+         giveni={O\bibinitperiod\bibinitdelim A\bibinitperiod},
+      }}%
+      {{hash=WF}{%
+         family={Wotawa},
+         familyi={W\bibinitperiod},
+         given={Franz},
+         giveni={F\bibinitperiod},
+      }}%
+    }
+    \list{organization}{1}{%
+      {IEEE}%
+    }
+    \strng{namehash}{BJTOAWF1}
+    \strng{fullhash}{BJTOAWF1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{B}
+    \field{sortinithash}{B}
+    \field{booktitle}{2019 IEEE International Conference On Artificial
+  Intelligence Testing (AITest)}
+    \field{pages}{37\bibrangedash 44}
+    \field{title}{Chatbot testing using AI planning}
+    \field{year}{2019}
+  \endentry
+
+  \entry{stsbenchmark}{inproceedings}{}
+    \name{author}{5}{}{%
+      {{hash=CD}{%
+         family={Cer},
+         familyi={C\bibinitperiod},
+         given={Daniel},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=DM}{%
+         family={Diab},
+         familyi={D\bibinitperiod},
+         given={Mona},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=AE}{%
+         family={Agirre},
+         familyi={A\bibinitperiod},
+         given={Eneko},
+         giveni={E\bibinitperiod},
+      }}%
+      {{hash=LGI}{%
+         family={Lopez-Gazpio},
+         familyi={L\bibinithyphendelim G\bibinitperiod},
+         given={I{\~n}igo},
+         giveni={I\bibinitperiod},
+      }}%
+      {{hash=SL}{%
+         family={Specia},
+         familyi={S\bibinitperiod},
+         given={Lucia},
+         giveni={L\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Association for Computational Linguistics}%
+    }
+    \strng{namehash}{CD+1}
+    \strng{fullhash}{CDDMAELGISL1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{C}
+    \field{sortinithash}{C}
+    \field{booktitle}{Proceedings of the 11th International Workshop on
+  Semantic Evaluation ({S}em{E}val-2017)}
+    \verb{doi}
+    \verb 10.18653/v1/S17-2001
+    \endverb
+    \field{pages}{1\bibrangedash 14}
+    \field{title}{{S}em{E}val-2017 Task 1: Semantic Textual Similarity
+  Multilingual and Crosslingual Focused Evaluation}
+    \verb{url}
+    \verb https://aclanthology.org/S17-2001
+    \endverb
+    \list{location}{1}{%
+      {Vancouver, Canada}%
+    }
+    \field{month}{08}
+    \field{year}{2017}
+  \endentry
+
+  \entry{mtesting}{article}{}
+    \name{author}{3}{}{%
+      {{hash=CTY}{%
+         family={Chen},
+         familyi={C\bibinitperiod},
+         given={Tsong\bibnamedelima Y},
+         giveni={T\bibinitperiod\bibinitdelim Y\bibinitperiod},
+      }}%
+      {{hash=CSC}{%
+         family={Cheung},
+         familyi={C\bibinitperiod},
+         given={Shing\bibnamedelima C},
+         giveni={S\bibinitperiod\bibinitdelim C\bibinitperiod},
+      }}%
+      {{hash=YSM}{%
+         family={Yiu},
+         familyi={Y\bibinitperiod},
+         given={Shiu\bibnamedelima Ming},
+         giveni={S\bibinitperiod\bibinitdelim M\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{CTYCSCYSM1}
+    \strng{fullhash}{CTYCSCYSM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{C}
+    \field{sortinithash}{C}
+    \field{title}{Metamorphic testing: a new approach for generating next test
+  cases}
+    \field{journaltitle}{arXiv preprint arXiv:2002.12543}
+    \field{year}{2020}
+  \endentry
+
+  \entry{alexatrust}{article}{}
+    \name{author}{4}{}{%
+      {{hash=CH}{%
+         family={Chung},
+         familyi={C\bibinitperiod},
+         given={Hyunji},
+         giveni={H\bibinitperiod},
+      }}%
+      {{hash=IM}{%
+         family={Iorga},
+         familyi={I\bibinitperiod},
+         given={Michaela},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=VJ}{%
+         family={Voas},
+         familyi={V\bibinitperiod},
+         given={Jeffrey},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=LS}{%
+         family={Lee},
+         familyi={L\bibinitperiod},
+         given={Sangjin},
+         giveni={S\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {IEEE}%
+    }
+    \strng{namehash}{CH+1}
+    \strng{fullhash}{CHIMVJLS1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{C}
+    \field{sortinithash}{C}
+    \field{number}{9}
+    \field{pages}{100\bibrangedash 104}
+    \field{title}{Alexa, can I trust you?}
+    \field{volume}{50}
+    \field{journaltitle}{Computer}
+    \field{year}{2017}
+  \endentry
+
+  \entry{dijkstra}{article}{}
+    \name{author}{1}{}{%
+      {{hash=DEW}{%
+         family={Dijkstra},
+         familyi={D\bibinitperiod},
+         given={Edsger\bibnamedelima W},
+         giveni={E\bibinitperiod\bibinitdelim W\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {ACM New York, NY, USA}%
+    }
+    \strng{namehash}{DEW1}
+    \strng{fullhash}{DEW1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{D}
+    \field{sortinithash}{D}
+    \field{number}{10}
+    \field{pages}{859\bibrangedash 866}
+    \field{title}{The humble programmer}
+    \field{volume}{15}
+    \field{journaltitle}{Communications of the ACM}
+    \field{year}{1972}
+  \endentry
+
+  \entry{higgins2004evaluating}{inproceedings}{}
+    \name{author}{4}{}{%
+      {{hash=HD}{%
+         family={Higgins},
+         familyi={H\bibinitperiod},
+         given={Derrick},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=BJ}{%
+         family={Burstein},
+         familyi={B\bibinitperiod},
+         given={Jill},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=MD}{%
+         family={Marcu},
+         familyi={M\bibinitperiod},
+         given={Daniel},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=GC}{%
+         family={Gentile},
+         familyi={G\bibinitperiod},
+         given={Claudia},
+         giveni={C\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{HD+1}
+    \strng{fullhash}{HDBJMDGC1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{H}
+    \field{sortinithash}{H}
+    \field{booktitle}{Proceedings of the Human Language Technology Conference
+  of the North American Chapter of the Association for Computational
+  Linguistics: HLT-NAACL 2004}
+    \field{pages}{185\bibrangedash 192}
+    \field{title}{Evaluating multiple aspects of coherence in student essays}
+    \field{year}{2004}
+  \endentry
+
+  \entry{unsupervised}{article}{}
+    \name{author}{2}{}{%
+      {{hash=HKH}{%
+         family={Huang},
+         familyi={H\bibinitperiod},
+         given={Kuan-Hao},
+         giveni={K\bibinithyphendelim H\bibinitperiod},
+      }}%
+      {{hash=CKW}{%
+         family={Chang},
+         familyi={C\bibinitperiod},
+         given={Kai-Wei},
+         giveni={K\bibinithyphendelim W\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{HKHCKW1}
+    \strng{fullhash}{HKHCKW1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{H}
+    \field{sortinithash}{H}
+    \field{title}{Generating syntactically controlled paraphrases without using
+  annotated parallel pairs}
+    \field{journaltitle}{arXiv preprint arXiv:2101.10579}
+    \field{year}{2021}
+  \endentry
+
+  \entry{interactivevoiceassistant}{inproceedings}{}
+    \name{author}{5}{}{%
+      {{hash=KT}{%
+         family={Khorosheva},
+         familyi={K\bibinitperiod},
+         given={Tatiana},
+         giveni={T\bibinitperiod},
+      }}%
+      {{hash=NM}{%
+         family={Novoseltseva},
+         familyi={N\bibinitperiod},
+         given={Marina},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=GN}{%
+         family={Geidarov},
+         familyi={G\bibinitperiod},
+         given={Nazim},
+         giveni={N\bibinitperiod},
+      }}%
+      {{hash=KN}{%
+         family={Krivosheev},
+         familyi={K\bibinitperiod},
+         given={Nikolay},
+         giveni={N\bibinitperiod},
+      }}%
+      {{hash=CS}{%
+         family={Chernenko},
+         familyi={C\bibinitperiod},
+         given={Sergey},
+         giveni={S\bibinitperiod},
+      }}%
+    }
+    \list{organization}{1}{%
+      {Springer}%
+    }
+    \strng{namehash}{KT+1}
+    \strng{fullhash}{KTNMGNKNCS1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{K}
+    \field{sortinithash}{K}
+    \field{booktitle}{International Conference on Intelligent Information
+  Technologies for Industry}
+    \field{pages}{444\bibrangedash 452}
+    \field{title}{Neural network control interface of the speaker dependent
+  computer system {\guillemotleft}Deep Interactive Voice Assistant
+  DIVA{\guillemotright} to help people with speech impairments}
+    \field{year}{2018}
+  \endentry
+
+  \entry{ipaknowl}{article}{}
+    \name{author}{3}{}{%
+      {{hash=KA}{%
+         family={Kumar},
+         familyi={K\bibinitperiod},
+         given={Amit},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=DR}{%
+         family={Dutta},
+         familyi={D\bibinitperiod},
+         given={Rahul},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=RH}{%
+         family={Rai},
+         familyi={R\bibinitperiod},
+         given={Harbhajan},
+         giveni={H\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{KADRRH1}
+    \strng{fullhash}{KADRRH1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{K}
+    \field{sortinithash}{K}
+    \field{title}{Intelligent Personal Assistant with Knowledge Navigation}
+    \field{journaltitle}{arXiv preprint arXiv:1704.08950}
+    \field{year}{2017}
+  \endentry
+
+  \entry{lapata2005automatic}{inproceedings}{}
+    \true{moreauthor}
+    \true{morelabelname}
+    \name{author}{2}{}{%
+      {{hash=LM}{%
+         family={Lapata},
+         familyi={L\bibinitperiod},
+         given={Mirella},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=BR}{%
+         family={Barzilay},
+         familyi={B\bibinitperiod},
+         given={Regina},
+         giveni={R\bibinitperiod},
+      }}%
+    }
+    \list{organization}{1}{%
+      {Citeseer}%
+    }
+    \strng{namehash}{LMBR+1}
+    \strng{fullhash}{LMBR+1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{L}
+    \field{sortinithash}{L}
+    \field{booktitle}{IJCAI}
+    \field{pages}{1085\bibrangedash 1090}
+    \field{title}{Automatic evaluation of text coherence: Models and
+  representations}
+    \field{volume}{5}
+    \field{year}{2005}
+  \endentry
+
+  \entry{voiceApplication}{inproceedings}{}
+    \name{author}{2}{}{%
+      {{hash=LKB}{%
+         family={Lee},
+         familyi={L\bibinitperiod},
+         given={Kwang\bibnamedelima B},
+         giveni={K\bibinitperiod\bibinitdelim B\bibinitperiod},
+      }}%
+      {{hash=GRA}{%
+         family={Grice},
+         familyi={G\bibinitperiod},
+         given={Roger\bibnamedelima A},
+         giveni={R\bibinitperiod\bibinitdelim A\bibinitperiod},
+      }}%
+    }
+    \list{organization}{1}{%
+      {IEEE}%
+    }
+    \strng{namehash}{LKBGRA1}
+    \strng{fullhash}{LKBGRA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{L}
+    \field{sortinithash}{L}
+    \field{booktitle}{2006 IEEE International Professional Communication
+  Conference}
+    \field{pages}{308\bibrangedash 320}
+    \field{title}{The design and development of user interfaces for voice
+  application in mobile devices}
+    \field{year}{2006}
+  \endentry
+
+  \entry{roberta}{article}{}
+    \name{author}{10}{}{%
+      {{hash=LY}{%
+         family={Liu},
+         familyi={L\bibinitperiod},
+         given={Yinhan},
+         giveni={Y\bibinitperiod},
+      }}%
+      {{hash=OM}{%
+         family={Ott},
+         familyi={O\bibinitperiod},
+         given={Myle},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=GN}{%
+         family={Goyal},
+         familyi={G\bibinitperiod},
+         given={Naman},
+         giveni={N\bibinitperiod},
+      }}%
+      {{hash=DJ}{%
+         family={Du},
+         familyi={D\bibinitperiod},
+         given={Jingfei},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=JM}{%
+         family={Joshi},
+         familyi={J\bibinitperiod},
+         given={Mandar},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=CD}{%
+         family={Chen},
+         familyi={C\bibinitperiod},
+         given={Danqi},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=LO}{%
+         family={Levy},
+         familyi={L\bibinitperiod},
+         given={Omer},
+         giveni={O\bibinitperiod},
+      }}%
+      {{hash=LM}{%
+         family={Lewis},
+         familyi={L\bibinitperiod},
+         given={Mike},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=ZL}{%
+         family={Zettlemoyer},
+         familyi={Z\bibinitperiod},
+         given={Luke},
+         giveni={L\bibinitperiod},
+      }}%
+      {{hash=SV}{%
+         family={Stoyanov},
+         familyi={S\bibinitperiod},
+         given={Veselin},
+         giveni={V\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{LY+1}
+    \strng{fullhash}{LYOMGNDJJMCDLOLMZLSV1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{L}
+    \field{sortinithash}{L}
+    \field{title}{Roberta: A robustly optimized bert pretraining approach}
+    \field{journaltitle}{arXiv preprint arXiv:1907.11692}
+    \field{year}{2019}
+  \endentry
+
+  \entry{alexapersonification}{inproceedings}{}
+    \name{author}{2}{}{%
+      {{hash=LI}{%
+         family={Lopatovska},
+         familyi={L\bibinitperiod},
+         given={Irene},
+         giveni={I\bibinitperiod},
+      }}%
+      {{hash=WH}{%
+         family={Williams},
+         familyi={W\bibinitperiod},
+         given={Harriet},
+         giveni={H\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{LIWH1}
+    \strng{fullhash}{LIWH1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{L}
+    \field{sortinithash}{L}
+    \field{booktitle}{Proceedings of the 2018 Conference on Human Information
+  Interaction \& Retrieval}
+    \field{pages}{265\bibrangedash 268}
+    \field{title}{Personification of the Amazon Alexa: BFF or a mindless
+  companion}
+    \field{year}{2018}
+  \endentry
+
+  \entry{stanfordcore}{inproceedings}{}
+    \name{author}{6}{}{%
+      {{hash=MCD}{%
+         family={Manning},
+         familyi={M\bibinitperiod},
+         given={Christopher\bibnamedelima D},
+         giveni={C\bibinitperiod\bibinitdelim D\bibinitperiod},
+      }}%
+      {{hash=SM}{%
+         family={Surdeanu},
+         familyi={S\bibinitperiod},
+         given={Mihai},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=BJ}{%
+         family={Bauer},
+         familyi={B\bibinitperiod},
+         given={John},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=FJR}{%
+         family={Finkel},
+         familyi={F\bibinitperiod},
+         given={Jenny\bibnamedelima Rose},
+         giveni={J\bibinitperiod\bibinitdelim R\bibinitperiod},
+      }}%
+      {{hash=BS}{%
+         family={Bethard},
+         familyi={B\bibinitperiod},
+         given={Steven},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=MD}{%
+         family={McClosky},
+         familyi={M\bibinitperiod},
+         given={David},
+         giveni={D\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{MCD+1}
+    \strng{fullhash}{MCDSMBJFJRBSMD1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{M}
+    \field{sortinithash}{M}
+    \field{booktitle}{Proceedings of 52nd annual meeting of the association for
+  computational linguistics: system demonstrations}
+    \field{pages}{55\bibrangedash 60}
+    \field{title}{The Stanford CoreNLP natural language processing toolkit}
+    \field{year}{2014}
+  \endentry
+
+  \entry{testgeneration}{article}{}
+    \name{author}{1}{}{%
+      {{hash=MP}{%
+         family={McMinn},
+         familyi={M\bibinitperiod},
+         given={Phil},
+         giveni={P\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Wiley Online Library}%
+    }
+    \strng{namehash}{MP1}
+    \strng{fullhash}{MP1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{M}
+    \field{sortinithash}{M}
+    \field{number}{2}
+    \field{pages}{105\bibrangedash 156}
+    \field{title}{Search-based software test data generation: a survey}
+    \field{volume}{14}
+    \field{journaltitle}{Software testing, Verification and reliability}
+    \field{year}{2004}
+  \endentry
+
+  \entry{voice2}{inproceedings}{}
+    \name{author}{4}{}{%
+      {{hash=MS}{%
+         family={Mennicken},
+         familyi={M\bibinitperiod},
+         given={Sarah},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=BR}{%
+         family={Brillman},
+         familyi={B\bibinitperiod},
+         given={Ruth},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=TJ}{%
+         family={Thom},
+         familyi={T\bibinitperiod},
+         given={Jennifer},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=CH}{%
+         family={Cramer},
+         familyi={C\bibinitperiod},
+         given={Henriette},
+         giveni={H\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{MS+1}
+    \strng{fullhash}{MSBRTJCH1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{M}
+    \field{sortinithash}{M}
+    \field{booktitle}{2018 AAAI Spring Symposium Series}
+    \field{title}{Challenges and methods in design of domain-specific voice
+  assistants}
+    \field{year}{2018}
+  \endentry
+
+  \entry{miltsakaki2008real}{inproceedings}{}
+    \name{author}{2}{}{%
+      {{hash=ME}{%
+         family={Miltsakaki},
+         familyi={M\bibinitperiod},
+         given={Eleni},
+         giveni={E\bibinitperiod},
+      }}%
+      {{hash=TA}{%
+         family={Troutt},
+         familyi={T\bibinitperiod},
+         given={Audrey},
+         giveni={A\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{META1}
+    \strng{fullhash}{META1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{M}
+    \field{sortinithash}{M}
+    \field{booktitle}{Proceedings of the third workshop on innovative use of
+  NLP for building educational applications}
+    \field{pages}{89\bibrangedash 97}
+    \field{title}{Real time web text classification and analysis of reading
+  difficulty}
+    \field{year}{2008}
+  \endentry
+
+  \entry{voice1}{inproceedings}{}
+    \name{author}{4}{}{%
+      {{hash=PD}{%
+         family={Pal},
+         familyi={P\bibinitperiod},
+         given={Debajyoti},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=AC}{%
+         family={Arpnikanondt},
+         familyi={A\bibinitperiod},
+         given={Chonlameth},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=FS}{%
+         family={Funilkul},
+         familyi={F\bibinitperiod},
+         given={Suree},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=VV}{%
+         family={Varadarajan},
+         familyi={V\bibinitperiod},
+         given={Vijayakumar},
+         giveni={V\bibinitperiod},
+      }}%
+    }
+    \list{organization}{1}{%
+      {IEEE}%
+    }
+    \strng{namehash}{PD+1}
+    \strng{fullhash}{PDACFSVV1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{P}
+    \field{sortinithash}{P}
+    \field{booktitle}{2019 10th International Conference on Computing,
+  Communication and Networking Technologies (ICCCNT)}
+    \field{pages}{1\bibrangedash 6}
+    \field{title}{User experience with smart voice assistants: the accent
+  perspective}
+    \field{year}{2019}
+  \endentry
+
+  \entry{dynamosa}{article}{}
+    \name{author}{3}{}{%
+      {{hash=PA}{%
+         family={Panichella},
+         familyi={P\bibinitperiod},
+         given={Annibale},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=KFM}{%
+         family={Kifetew},
+         familyi={K\bibinitperiod},
+         given={Fitsum\bibnamedelima Meshesha},
+         giveni={F\bibinitperiod\bibinitdelim M\bibinitperiod},
+      }}%
+      {{hash=TP}{%
+         family={Tonella},
+         familyi={T\bibinitperiod},
+         given={Paolo},
+         giveni={P\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {IEEE}%
+    }
+    \strng{namehash}{PAKFMTP1}
+    \strng{fullhash}{PAKFMTP1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{P}
+    \field{sortinithash}{P}
+    \field{number}{2}
+    \field{pages}{122\bibrangedash 158}
+    \field{title}{Automated test case generation as a many-objective
+  optimisation problem with dynamic selection of the targets}
+    \field{volume}{44}
+    \field{journaltitle}{IEEE Transactions on Software Engineering}
+    \field{year}{2017}
+  \endentry
+
+  \entry{alexahome}{inproceedings}{}
+    \name{author}{4}{}{%
+      {{hash=SA}{%
+         family={Sciuto},
+         familyi={S\bibinitperiod},
+         given={Alex},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=SA}{%
+         family={Saini},
+         familyi={S\bibinitperiod},
+         given={Arnita},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=FJ}{%
+         family={Forlizzi},
+         familyi={F\bibinitperiod},
+         given={Jodi},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=HJI}{%
+         family={Hong},
+         familyi={H\bibinitperiod},
+         given={Jason\bibnamedelima I},
+         giveni={J\bibinitperiod\bibinitdelim I\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{SA+1}
+    \strng{fullhash}{SASAFJHJI1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \field{booktitle}{Proceedings of the DIS}
+    \field{title}{Hey Alexa, what’s up?”: Studies of in-home conversational
+  agent usage}
+  \endentry
+
+  \entry{metamorphic}{article}{}
+    \name{author}{4}{}{%
+      {{hash=SS}{%
+         family={Segura},
+         familyi={S\bibinitperiod},
+         given={Sergio},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=FG}{%
+         family={Fraser},
+         familyi={F\bibinitperiod},
+         given={Gordon},
+         giveni={G\bibinitperiod},
+      }}%
+      {{hash=SAB}{%
+         family={Sanchez},
+         familyi={S\bibinitperiod},
+         given={Ana\bibnamedelima B},
+         giveni={A\bibinitperiod\bibinitdelim B\bibinitperiod},
+      }}%
+      {{hash=RCA}{%
+         family={Ruiz-Cort{\'e}s},
+         familyi={R\bibinithyphendelim C\bibinitperiod},
+         given={Antonio},
+         giveni={A\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {IEEE}%
+    }
+    \strng{namehash}{SS+1}
+    \strng{fullhash}{SSFGSABRCA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \field{number}{9}
+    \field{pages}{805\bibrangedash 824}
+    \field{title}{A survey on metamorphic testing}
+    \field{volume}{42}
+    \field{journaltitle}{IEEE Transactions on software engineering}
+    \field{year}{2016}
+  \endentry
+
+  \entry{tesi_va}{misc}{}
+    \name{author}{1}{}{%
+      {{hash=TI}{%
+         family={Tlemcani},
+         familyi={T\bibinitperiod},
+         given={Ismail},
+         giveni={I\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{TI1}
+    \strng{fullhash}{TI1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{T}
+    \field{sortinithash}{T}
+    \field{title}{SYSTEM-LEVEL AUTOMATED TESTING FOR HOME DIGITAL VOICE
+  ASSISTANTS}
+    \field{year}{2020}
+  \endentry
+
+  \entry{pos}{inproceedings}{}
+    \name{author}{4}{}{%
+      {{hash=TK}{%
+         family={Toutanova},
+         familyi={T\bibinitperiod},
+         given={Kristina},
+         giveni={K\bibinitperiod},
+      }}%
+      {{hash=KD}{%
+         family={Klein},
+         familyi={K\bibinitperiod},
+         given={Dan},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=MCD}{%
+         family={Manning},
+         familyi={M\bibinitperiod},
+         given={Christopher\bibnamedelima D},
+         giveni={C\bibinitperiod\bibinitdelim D\bibinitperiod},
+      }}%
+      {{hash=SY}{%
+         family={Singer},
+         familyi={S\bibinitperiod},
+         given={Yoram},
+         giveni={Y\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{TK+1}
+    \strng{fullhash}{TKKDMCDSY1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{T}
+    \field{sortinithash}{T}
+    \field{booktitle}{Proceedings of the 2003 Human Language Technology
+  Conference of the North American Chapter of the Association for Computational
+  Linguistics}
+    \field{pages}{252\bibrangedash 259}
+    \field{title}{Feature-rich part-of-speech tagging with a cyclic dependency
+  network}
+    \field{year}{2003}
+  \endentry
+
+  \entry{chatbotevaluation}{article}{}
+    \true{moreauthor}
+    \true{morelabelname}
+    \name{author}{2}{}{%
+      {{hash=VV}{%
+         family={Vijayaraghavan},
+         familyi={V\bibinitperiod},
+         given={V},
+         giveni={V},
+      }}%
+      {{hash=CJB}{%
+         family={Cooper},
+         familyi={C\bibinitperiod},
+         given={Jack\bibnamedelima Brian},
+         giveni={J\bibinitperiod\bibinitdelim B\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Elsevier}%
+    }
+    \strng{namehash}{VVCJB+1}
+    \strng{fullhash}{VVCJB+1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{V}
+    \field{sortinithash}{V}
+    \field{pages}{2267\bibrangedash 2274}
+    \field{title}{Algorithm Inspection for Chatbot Performance Evaluation}
+    \field{volume}{171}
+    \field{journaltitle}{Procedia Computer Science}
+    \field{year}{2020}
+  \endentry
+
+  \entry{virtualalexa}{misc}{}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{V}
+    \field{sortinithash}{V}
+    \field{howpublished}{\url{https://github.com/bespoken/virtual-alexa}}
+    \field{title}{{Virtual Alexa} Interact with skills intuitively and
+  programmatically.}
+  \endentry
+
+  \entry{supervised}{inproceedings}{}
+    \name{author}{3}{}{%
+      {{hash=WY}{%
+         family={Wang},
+         familyi={W\bibinitperiod},
+         given={Yushi},
+         giveni={Y\bibinitperiod},
+      }}%
+      {{hash=BJ}{%
+         family={Berant},
+         familyi={B\bibinitperiod},
+         given={Jonathan},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=LP}{%
+         family={Liang},
+         familyi={L\bibinitperiod},
+         given={Percy},
+         giveni={P\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{WYBJLP1}
+    \strng{fullhash}{WYBJLP1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{W}
+    \field{sortinithash}{W}
+    \field{booktitle}{Proceedings of the 53rd Annual Meeting of the Association
+  for Computational Linguistics and the 7th International Joint Conference on
+  Natural Language Processing (Volume 1: Long Papers)}
+    \field{pages}{1332\bibrangedash 1342}
+    \field{title}{Building a semantic parser overnight}
+    \field{year}{2015}
+  \endentry
+
+  \entry{testcase}{inproceedings}{}
+    \name{author}{5}{}{%
+      {{hash=WC}{%
+         family={Watson},
+         familyi={W\bibinitperiod},
+         given={Cody},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=TM}{%
+         family={Tufano},
+         familyi={T\bibinitperiod},
+         given={Michele},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=MK}{%
+         family={Moran},
+         familyi={M\bibinitperiod},
+         given={Kevin},
+         giveni={K\bibinitperiod},
+      }}%
+      {{hash=BG}{%
+         family={Bavota},
+         familyi={B\bibinitperiod},
+         given={Gabriele},
+         giveni={G\bibinitperiod},
+      }}%
+      {{hash=PD}{%
+         family={Poshyvanyk},
+         familyi={P\bibinitperiod},
+         given={Denys},
+         giveni={D\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{WC+1}
+    \strng{fullhash}{WCTMMKBGPD1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{W}
+    \field{sortinithash}{W}
+    \field{booktitle}{Proceedings of the ACM/IEEE 42nd International Conference
+  on Software Engineering}
+    \field{pages}{1398\bibrangedash 1409}
+    \field{title}{On learning meaningful assert statements for unit test cases}
+    \field{year}{2020}
+  \endentry
+
+  \entry{alexaipa}{inproceedings}{}
+    \name{author}{8}{}{%
+      {{hash=XW}{%
+         family={Xiao},
+         familyi={X\bibinitperiod},
+         given={Wei},
+         giveni={W\bibinitperiod},
+      }}%
+      {{hash=HQ}{%
+         family={Hu},
+         familyi={H\bibinitperiod},
+         given={Qian},
+         giveni={Q\bibinitperiod},
+      }}%
+      {{hash=MT}{%
+         family={Mohamed},
+         familyi={M\bibinitperiod},
+         given={Thahir},
+         giveni={T\bibinitperiod},
+      }}%
+      {{hash=GZ}{%
+         family={Gao},
+         familyi={G\bibinitperiod},
+         given={Zheng},
+         giveni={Z\bibinitperiod},
+      }}%
+      {{hash=GX}{%
+         family={Gao},
+         familyi={G\bibinitperiod},
+         given={Xibin},
+         giveni={X\bibinitperiod},
+      }}%
+      {{hash=AR}{%
+         family={Arava},
+         familyi={A\bibinitperiod},
+         given={Radhika},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=M}{%
+         family={Mohamed},
+         familyi={M\bibinitperiod},
+      }}%
+      {{hash=A}{%
+         family={Abdelhady},
+         familyi={A\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{XW+1}
+    \strng{fullhash}{XWHQMTGZGXARMA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{X}
+    \field{sortinithash}{X}
+    \field{booktitle}{2nd International Workshop: Industrial Recommendation
+  Systems}
+    \field{title}{Two-stage Voice Application Recommender System for Unhandled
+  Utterances in Intelligent Personal Assistant}
+    \field{year}{2021}
+  \endentry
+\enddatalist
+\endinput
