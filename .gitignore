@@ -1,1 +1,17 @@
+# MAIN output files
+main.aux
+main.lof
+main.log
+main.out
+main.run.xml
+main.toc
+main-blx.bib
+main.synctex.gz
+main.pdf
+main.blg
+
+# CHAPTERS output files
+/Chapters/**.aux
+
+# BUILD folder
 /build/

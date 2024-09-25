@@ -1,0 +1,70 @@
+% Chapter 1
+
+\chapter{Introduction} % Main chapter title
+
+\label{Chapter1} % For referencing the chapter elsewhere, use \ref{Chapter1} 
+
+%----------------------------------------------------------------------------------------
+
+% Define some commands to keep the formatting separated from the content 
+\newcommand{\keyword}[1]{\textbf{#1}}
+\newcommand{\tabhead}[1]{\textbf{#1}}
+\newcommand{\code}[1]{\texttt{#1}}
+\newcommand{\file}[1]{\texttt{\bfseries#1}}
+\newcommand{\option}[1]{\texttt{\itshape#1}}
+
+%----------------------------------------------------------------------------------------
+
+\section{Application Context} In the field of software development, the practice of commenting written code is widely recognized, as it serves multiple functions in the application and maintenance of software systems.
+
+\noindent Comments are non-executable statements embedded within code to provide explanations, clarify intent, and guide future developers or collaborators who may interact with the codebase. While it may seem an easy job to write comments at first glance, general principles and good practices \cite{commentingPrinciples} are often overlooked.
+While comments do not affect the program’s execution, they play an essential role in enhancing \textbf{code readability} \cite{codeReadability}, \textbf{maintainability} \cite{codeMaintainability}, and \textbf{collaboration}, which are critical to software development as a whole in both small teams and large organizations.
+
+\noindent When writing comments, it is important to strike a balance in their length, ensuring they are neither too brief nor overly detailed. Comments should be concise yet informative, providing enough context without overwhelming the reader with unnecessary details.
+For documentation comments, developers must adhere to the specific syntax and formatting rules of the programming language being used, particularly when it comes to annotations and tags, to ensure proper integration with documentation tools.
+Technical comments added during development should be revised or removed when they become obsolete. Outdated or irrelevant comments can lead to confusion and misinterpretation, detracting from code clarity rather than enhancing it.
+Additionally, comments should avoid posing questions, as their primary function is to clarify and guide, not to introduce uncertainty. Lastly, comments must not be left empty, as they serve no purpose and only add clutter to the codebase.
+
+\noindent Given these premises, it is therefore imperative to make sure comments are verified to be correctly written, with as high quality as possible.
+
+
+\section{Motivation and Objectives}
+Developing a comment analysis system \cite{commentAnalysis} is a challenging task, as it requires a deep understanding of the rules governing the programming language in which the code is written, alongside ensuring computational accuracy and efficiency when processing comment data.
+
+\noindent Additionally, the content of comments can often be complex or ambiguous, making it difficult for automated heuristics to handle certain scenarios correctly. In such cases, manual review may be necessary to address edge cases or interpret unclear comments.
+Therefore, it is crucial to ensure that the system is robust and effective for the vast majority of use cases, while acknowledging that some instances may require additional intervention.
+
+\noindent The objective of this work is to define an approach for the automatic analysis of large code-related datasets, aiming to identify comments that fail to meet an adequate level of quality based on the following criteria:
+\begin{itemize}
+	\item \textbf{Empty comments}: as previously mentioned, empty comments serve no purpose and should be flagged immediately during analysis, as they offer no value or clarity to the code.
+	\item \textbf{Comments asking questions}: whether direct or implied (with or without a question mark), questions contradict the purpose of comments—providing clear, definitive information to the reader.
+	\item \textbf{Short comments}: they lack sufficient information to explain the code adequately. Their brevity prevents them from offering the necessary context to help readers understand the functionality or purpose of the code.
+	\item \textbf{Long comments}: conversely, they tend to provide excessive detail, overwhelming the reader with unnecessary information. This can result in confusion and misinterpretation, as too much data often obscures the main point.
+	\item \textbf{Comments under development}: these are highly technical, often temporary comments relevant only to developers actively working on the project. Such comments need regular updates or removal once they no longer reflect the current state of the system.
+	\item \textbf{Incomplete comments}: they clearly indicate missing information, either in terms of sentence structure or overall completeness. They fail to fully communicate the intended message or explanation, leaving the reader with gaps in understanding.
+	\item \textbf{Uneven comments format}: with irregular structure or formatting, they contribute to clutter and hinder readability. A lack of consistency in style makes comments harder to follow and increases the difficulty of understanding and maintaining the code. Comments should adhere to a uniform format to ensure clarity and ease of use.
+\end{itemize}
+
+\section{Results}
+Using the approach described above, our goal is to generate a reliable set of comment indices for each category from the input dataset. To enhance the quality of the output, we apply natural language processing (NLP) techniques in certain cases, ensuring the accuracy and relevance of the results. Additionally, we conducted an empirical study to evaluate the effectiveness of our approach on a sample dataset consisting of manually selected instances.
+
+\noindent We compared the automated results produced by our tool with a thorough manual analysis of the same sample. The comparison aimed to ensure that the error rate of our tool remained within a ±5\% margin. Finally, we identified the key limitations of our approach and provided recommendations for future research and improvements. The main contributions of this paper can be summarized as follows:
+\begin{itemize}
+    \item We proposed an analysis tool for automatic detection of lack of comments quality, evaluated under different criteria;
+    \item We used a set of carefully selected datasets to train our approach;
+    \item We defined case-study samples from selected datasets to verify the correctness of our approach.
+\end{itemize}
+
+\section{Thesis Structure and Organization}
+This next chapters of this thesis are:
+
+\begin{itemize}
+\item \textit{Chapter 2}: presents background and related works.
+\item \textit{Chapter 3}: presents our heuristics for detecting lack of comments quality for each category.
+\item \textit{Chapter 4}: presents the empirical study conducted to validate the
+defined heuristic.
+\item \textit{Chapter 5}: describes the building process of our tool.
+\item \textit{Chapter 6}: concludes this thesis and provides directions for future
+works.
+
+\end{itemize}
