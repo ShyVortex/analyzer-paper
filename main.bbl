@@ -49,6 +49,50 @@
     \field{year}{2019}
   \endentry
 
+  \entry{vandam2023}{misc}{}
+    \name{author}{3}{}{%
+      {{hash=vDT}{%
+         prefix={van},
+         prefixi={v\bibinitperiod},
+         family={Dam},
+         familyi={D\bibinitperiod},
+         given={Tim},
+         giveni={T\bibinitperiod},
+      }}%
+      {{hash=IM}{%
+         family={Izadi},
+         familyi={I\bibinitperiod},
+         given={Maliheh},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=vDA}{%
+         prefix={van},
+         prefixi={v\bibinitperiod},
+         family={Deursen},
+         familyi={D\bibinitperiod},
+         given={Arie},
+         giveni={A\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{DTvIMDAv1}
+    \strng{fullhash}{DTvIMDAv1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{D}
+    \field{sortinithash}{D}
+    \verb{eprint}
+    \verb 2304.12269
+    \endverb
+    \field{title}{Enriching Source Code with Contextual Data for Code
+  Completion Models: An Empirical Study}
+    \verb{url}
+    \verb https://arxiv.org/abs/2304.12269
+    \endverb
+    \field{eprinttype}{arXiv}
+    \field{eprintclass}{cs.CL}
+    \field{year}{2023}
+  \endentry
+
   \entry{commentAnalysis}{article}{}
     \name{author}{6}{}{%
       {{hash=HSZ}{%
@@ -185,6 +229,82 @@
   Applications}
     \field{month}{05}
     \field{year}{2016}
+  \endentry
+
+  \entry{buildingRock}{misc}{}
+    \name{author}{9}{}{%
+      {{hash=SL}{%
+         family={Shi},
+         familyi={S\bibinitperiod},
+         given={Lin},
+         giveni={L\bibinitperiod},
+      }}%
+      {{hash=MF}{%
+         family={Mu},
+         familyi={M\bibinitperiod},
+         given={Fangwen},
+         giveni={F\bibinitperiod},
+      }}%
+      {{hash=CX}{%
+         family={Chen},
+         familyi={C\bibinitperiod},
+         given={Xiao},
+         giveni={X\bibinitperiod},
+      }}%
+      {{hash=WS}{%
+         family={Wang},
+         familyi={W\bibinitperiod},
+         given={Song},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=WJ}{%
+         family={Wang},
+         familyi={W\bibinitperiod},
+         given={Junjie},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=YY}{%
+         family={Yang},
+         familyi={Y\bibinitperiod},
+         given={Ye},
+         giveni={Y\bibinitperiod},
+      }}%
+      {{hash=LG}{%
+         family={Li},
+         familyi={L\bibinitperiod},
+         given={Ge},
+         giveni={G\bibinitperiod},
+      }}%
+      {{hash=XX}{%
+         family={Xia},
+         familyi={X\bibinitperiod},
+         given={Xin},
+         giveni={X\bibinitperiod},
+      }}%
+      {{hash=WQ}{%
+         family={Wang},
+         familyi={W\bibinitperiod},
+         given={Qing},
+         giveni={Q\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{SL+1}
+    \strng{fullhash}{SLMFCXWSWJYYLGXXWQ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \verb{eprint}
+    \verb 2207.05579
+    \endverb
+    \field{title}{Are We Building on the Rock? On the Importance of Data
+  Preprocessing for Code Summarization}
+    \verb{url}
+    \verb https://arxiv.org/abs/2207.05579
+    \endverb
+    \field{eprinttype}{arXiv}
+    \field{eprintclass}{cs.SE}
+    \field{year}{2022}
   \endentry
 \enddatalist
 \endinput
