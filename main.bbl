@@ -17,6 +17,65 @@
 \endgroup
 
 \datalist[entry]{nty/global//global/global}
+  \entry{CHEN201945}{article}{}
+    \name{author}{6}{}{%
+      {{hash=CH}{%
+         family={Chen},
+         familyi={C\bibinitperiod},
+         given={Huanchao},
+         giveni={H\bibinitperiod},
+      }}%
+      {{hash=HY}{%
+         family={Huang},
+         familyi={H\bibinitperiod},
+         given={Yuan},
+         giveni={Y\bibinitperiod},
+      }}%
+      {{hash=LZ}{%
+         family={Liu},
+         familyi={L\bibinitperiod},
+         given={Zhiyong},
+         giveni={Z\bibinitperiod},
+      }}%
+      {{hash=CX}{%
+         family={Chen},
+         familyi={C\bibinitperiod},
+         given={Xiangping},
+         giveni={X\bibinitperiod},
+      }}%
+      {{hash=ZF}{%
+         family={Zhou},
+         familyi={Z\bibinitperiod},
+         given={Fan},
+         giveni={F\bibinitperiod},
+      }}%
+      {{hash=LX}{%
+         family={Luo},
+         familyi={L\bibinitperiod},
+         given={Xiaonan},
+         giveni={X\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{CH+1}
+    \strng{fullhash}{CHHYLZCXZFLX1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{C}
+    \field{sortinithash}{C}
+    \verb{doi}
+    \verb https://doi.org/10.1016/j.jss.2019.03.010
+    \endverb
+    \field{issn}{0164-1212}
+    \field{pages}{45\bibrangedash 63}
+    \field{title}{Automatically detecting the scopes of source code comments}
+    \verb{url}
+    \verb https://www.sciencedirect.com/science/article/pii/S016412121930055X
+    \endverb
+    \field{volume}{153}
+    \field{journaltitle}{Journal of Systems and Software}
+    \field{year}{2019}
+  \endentry
+
   \entry{commentingPrinciples}{article}{}
     \name{author}{2}{}{%
       {{hash=CD}{%
@@ -151,7 +210,6 @@
     \field{journaltitle}{Journal of Management Practices, Humanities and Social
   Sciences}
     \field{year}{2022}
-    \warn{\item Invalid format of field 'month'}
   \endentry
 
   \entry{HaoHe19}{inproceedings}{}
@@ -212,6 +270,78 @@
     \field{year}{2019}
   \endentry
 
+  \entry{javadocMiner}{inproceedings}{}
+    \name{author}{3}{}{%
+      {{hash=KN}{%
+         family={Khamis},
+         familyi={K\bibinitperiod},
+         given={Ninus},
+         giveni={N\bibinitperiod},
+      }}%
+      {{hash=WR}{%
+         family={Witte},
+         familyi={W\bibinitperiod},
+         given={Ren{\'e}},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=RJ}{%
+         family={Rilling},
+         familyi={R\bibinitperiod},
+         given={Juergen},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \name{editor}{5}{}{%
+      {{hash=HCJ}{%
+         family={Hopfe},
+         familyi={H\bibinitperiod},
+         given={Christina\bibnamedelima J},
+         giveni={C\bibinitperiod\bibinitdelim J\bibinitperiod},
+      }}%
+      {{hash=RY}{%
+         family={Rezgui},
+         familyi={R\bibinitperiod},
+         given={Yacine},
+         giveni={Y\bibinitperiod},
+      }}%
+      {{hash=ME}{%
+         family={M{\'e}tais},
+         familyi={M\bibinitperiod},
+         given={Elisabeth},
+         giveni={E\bibinitperiod},
+      }}%
+      {{hash=PA}{%
+         family={Preece},
+         familyi={P\bibinitperiod},
+         given={Alun},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=LH}{%
+         family={Li},
+         familyi={L\bibinitperiod},
+         given={Haijiang},
+         giveni={H\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Springer Berlin Heidelberg}%
+    }
+    \strng{namehash}{KNWRRJ1}
+    \strng{fullhash}{KNWRRJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{K}
+    \field{sortinithash}{K}
+    \field{booktitle}{Natural Language Processing and Information Systems}
+    \field{pages}{68\bibrangedash 79}
+    \field{title}{Automatic Quality Assessment of Source Code Comments: The
+  JavadocMiner}
+    \list{location}{1}{%
+      {Berlin, Heidelberg}%
+    }
+    \field{year}{2010}
+  \endentry
+
   \entry{codeReadability}{inproceedings}{}
     \name{author}{4}{}{%
       {{hash=OD}{%
@@ -254,6 +384,35 @@
     \field{title}{Evaluating Code Readability and Legibility: An Examination of
   Human-centric Studies}
     \field{year}{2020}
+  \endentry
+
+  \entry{javaCmsClassification}{article}{}
+    \name{author}{1}{}{%
+      {{hash=PBMBL}{%
+         family={Pascarella},
+         familyi={P\bibinitperiod},
+         suffix={L.},
+         suffixi={L\bibinitperiod},
+         given={Bruntink M. {\&}\bibnamedelima Bacchelli},
+         giveni={B\bibinitperiod\bibinitdelim M\bibinitperiod\bibinitdelim
+  {\&}\bibinitperiod\bibinitdelim B\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Springer Nature}%
+    }
+    \strng{namehash}{PLBMB1}
+    \strng{fullhash}{PLBMB1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{P}
+    \field{sortinithash}{P}
+    \field{number}{24}
+    \field{pages}{1499\bibrangedash 1537}
+    \field{title}{Classifying code comments in Java software systems}
+    \field{volume}{1}
+    \field{journaltitle}{Empir Software Eng}
+    \field{year}{2019}
   \endentry
 
   \entry{Rani2021}{inproceedings}{}
