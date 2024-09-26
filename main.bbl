@@ -154,6 +154,64 @@
     \warn{\item Invalid format of field 'month'}
   \endentry
 
+  \entry{HaoHe19}{inproceedings}{}
+    \name{author}{1}{}{%
+      {{hash=HH}{%
+         family={He},
+         familyi={H\bibinitperiod},
+         given={Hao},
+         giveni={H\bibinitperiod},
+      }}%
+    }
+    \name{editor}{4}{}{%
+      {{hash=DM}{%
+         family={Dumas},
+         familyi={D\bibinitperiod},
+         given={Marlon},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=PD}{%
+         family={Pfahl},
+         familyi={P\bibinitperiod},
+         given={Dietmar},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=AS}{%
+         family={Apel},
+         familyi={A\bibinitperiod},
+         given={Sven},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=RA}{%
+         family={Russo},
+         familyi={R\bibinitperiod},
+         given={Alessandra},
+         giveni={A\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {ACM}%
+    }
+    \strng{namehash}{HH1}
+    \strng{fullhash}{HH1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{H}
+    \field{sortinithash}{H}
+    \field{booktitle}{Proceedings of the {ACM} Joint Meeting on European
+  Software Engineering Conference and Symposium on the Foundations of Software
+  Engineering, {ESEC/SIGSOFT} {FSE} 2019, Tallinn, Estonia, August 26-30, 2019}
+    \verb{doi}
+    \verb 10.1145/3338906.3342494
+    \endverb
+    \field{pages}{1217\bibrangedash 1219}
+    \field{title}{Understanding source code comments at large-scale}
+    \verb{url}
+    \verb https://doi.org/10.1145/3338906.3342494
+    \endverb
+    \field{year}{2019}
+  \endentry
+
   \entry{codeReadability}{inproceedings}{}
     \name{author}{4}{}{%
       {{hash=OD}{%
@@ -196,6 +254,99 @@
     \field{title}{Evaluating Code Readability and Legibility: An Examination of
   Human-centric Studies}
     \field{year}{2020}
+  \endentry
+
+  \entry{Rani2021}{inproceedings}{}
+    \name{author}{1}{}{%
+      {{hash=RP}{%
+         family={Rani},
+         familyi={R\bibinitperiod},
+         given={Pooja},
+         giveni={P\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {IEEE}%
+    }
+    \strng{namehash}{RP1}
+    \strng{fullhash}{RP1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{R}
+    \field{sortinithash}{R}
+    \field{booktitle}{2021 IEEE/ACM 43rd International Conference on Software
+  Engineering: Companion Proceedings (ICSE-Companion)}
+    \verb{doi}
+    \verb 10.1109/icse-companion52605.2021.00132
+    \endverb
+    \field{pages}{299–303}
+    \field{title}{Speculative Analysis for Quality Assessment of Code Comments}
+    \verb{url}
+    \verb http://dx.doi.org/10.1109/ICSE-Companion52605.2021.00132
+    \endverb
+    \field{volume}{36}
+    \field{month}{05}
+    \field{year}{2021}
+  \endentry
+
+  \entry{Rani2023}{article}{}
+    \name{author}{6}{}{%
+      {{hash=RP}{%
+         family={Rani},
+         familyi={R\bibinitperiod},
+         given={Pooja},
+         giveni={P\bibinitperiod},
+      }}%
+      {{hash=BA}{%
+         family={Blasi},
+         familyi={B\bibinitperiod},
+         given={Arianna},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=SN}{%
+         family={Stulova},
+         familyi={S\bibinitperiod},
+         given={Nataliia},
+         giveni={N\bibinitperiod},
+      }}%
+      {{hash=PS}{%
+         family={Panichella},
+         familyi={P\bibinitperiod},
+         given={Sebastiano},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=GA}{%
+         family={Gorla},
+         familyi={G\bibinitperiod},
+         given={Alessandra},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=NO}{%
+         family={Nierstrasz},
+         familyi={N\bibinitperiod},
+         given={Oscar},
+         giveni={O\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{RP+1}
+    \strng{fullhash}{RPBASNPSGANO1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{R}
+    \field{sortinithash}{R}
+    \verb{doi}
+    \verb https://doi.org/10.1016/j.jss.2022.111515
+    \endverb
+    \field{issn}{0164-1212}
+    \field{pages}{111515}
+    \field{title}{A decade of code comment quality assessment: A systematic
+  literature review}
+    \verb{url}
+    \verb https://www.sciencedirect.com/science/article/pii/S0164121222001911
+    \endverb
+    \field{volume}{195}
+    \field{journaltitle}{Journal of Systems and Software}
+    \field{year}{2023}
   \endentry
 
   \entry{codeMaintainability}{article}{}
@@ -305,6 +456,104 @@
     \field{eprinttype}{arXiv}
     \field{eprintclass}{cs.SE}
     \field{year}{2022}
+  \endentry
+
+  \entry{steidl2013}{inproceedings}{}
+    \name{author}{3}{}{%
+      {{hash=SD}{%
+         family={Steidl},
+         familyi={S\bibinitperiod},
+         given={Daniela},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=HB}{%
+         family={Hummel},
+         familyi={H\bibinitperiod},
+         given={Benjamin},
+         giveni={B\bibinitperiod},
+      }}%
+      {{hash=JE}{%
+         family={Juergens},
+         familyi={J\bibinitperiod},
+         given={Elmar},
+         giveni={E\bibinitperiod},
+      }}%
+    }
+    \keyw{Measurement;Documentation;Java;Coherence;Software;Computer
+  bugs;Training data}
+    \strng{namehash}{SDHBJE1}
+    \strng{fullhash}{SDHBJE1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \field{booktitle}{2013 21st International Conference on Program
+  Comprehension (ICPC)}
+    \verb{doi}
+    \verb 10.1109/ICPC.2013.6613836
+    \endverb
+    \field{pages}{83\bibrangedash 92}
+    \field{title}{Quality analysis of source code comments}
+    \field{year}{2013}
+  \endentry
+
+  \entry{TAN2015493}{incollection}{}
+    \name{author}{1}{}{%
+      {{hash=TL}{%
+         family={Tan},
+         familyi={T\bibinitperiod},
+         given={Lin},
+         giveni={L\bibinitperiod},
+      }}%
+    }
+    \name{editor}{3}{}{%
+      {{hash=BC}{%
+         family={Bird},
+         familyi={B\bibinitperiod},
+         given={Christian},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=MT}{%
+         family={Menzies},
+         familyi={M\bibinitperiod},
+         given={Tim},
+         giveni={T\bibinitperiod},
+      }}%
+      {{hash=ZT}{%
+         family={Zimmermann},
+         familyi={Z\bibinitperiod},
+         given={Thomas},
+         giveni={T\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Morgan Kaufmann}%
+    }
+    \strng{namehash}{TL1}
+    \strng{fullhash}{TL1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{T}
+    \field{sortinithash}{T}
+    \field{booktitle}{The Art and Science of Analyzing Software Data}
+    \verb{doi}
+    \verb https://doi.org/10.1016/B978-0-12-411519-4.00017-3
+    \endverb
+    \field{isbn}{978-0-12-411519-4}
+    \field{pages}{493\bibrangedash 517}
+    \field{title}{Chapter 17 - Code Comment Analysis for Improving Software
+  Quality**This chapter contains figures, tables, and text copied from the
+  author’s PhD dissertation and the papers that the author of this chapter
+  coauthored [[3], [1], [35], [7 ]]. Sections 17.2.3, 17.4.3, 17.5, and 17.6
+  are new, and the other sections are augmented, reorganized, and improved.}
+    \verb{url}
+    \verb https://www.sciencedirect.com/science/article/pii/B978012411519400017
+    \verb 3
+    \endverb
+    \list{location}{1}{%
+      {Boston}%
+    }
+    \field{year}{2015}
   \endentry
 \enddatalist
 \endinput

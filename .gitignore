@@ -12,6 +12,7 @@ main.blg
 
 # CHAPTERS output files
 /Chapters/**.aux
+/Chapters/**.log
 
 # BUILD folder
 /build/

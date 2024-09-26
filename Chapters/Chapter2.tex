@@ -1,0 +1,30 @@
+% Chapter 2
+
+\chapter{Background and Related Work} % Main chapter title
+
+\label{Chapter2} 
+
+\section{Comments Quality}
+Comment quality refers to how effectively developers convey information about the tasks the code fulfills. Writing clear, helpful comments is essential for maintaining software over time. Source code without adequate comments becomes difficult to maintain, as developers may struggle to make changes without fully understanding its purpose or functionality. High-quality comments should be readable, well-organized, syntactically accurate, and logically clear. They must cater to both experienced and inexperienced developers, ensuring that the code is accessible to anyone who works on it.
+
+\noindent There are several practices that can undermine or improve comments quality. For example, when dealing with long and complex methods, the accompanying comment should be concise, straightforward, and focus on key points. Providing examples where relevant can enhance clarity. Comments should also adhere to proper indentation and line-break styles, as inconsistent formatting or excessive spacing can cause confusion and reduce readability.
+
+\noindent Issues can arise when outdated or deprecated methods are left commented out within the code, often cluttering more useful, current comments. If a comment is intended as documentation, it should match the method’s parameters and return types to ensure accuracy and relevance.
+
+\noindent Ideally, comments should only be added when necessary. When included, they should provide a description that is both concise and cohesive, avoiding redundancy or excessive detail. Inline comments within methods that explain actions as they occur are particularly useful, as they help guide readers through the code step by step, making it easier to follow and understand.
+
+\section{Comments Quality Analysis}
+Several studies have been conducted to analyze the quality of comments across various datasets. One such approach, presented by \textit{Steidl et al.} \cite{steidl2013}, proposed a model for evaluating comment quality based on different comment categories. The researchers used machine learning techniques to categorize comments from \textit{Java} and \textit{C/C++} programs, allowing for a more structured analysis of comment quality. By applying metrics tailored to specific comment categories, they were able to effectively assess key quality aspects within the model, providing valuable insights into the strengths and weaknesses of code comments in these programming languages.
+
+\noindent \textit{Lin Tan} \cite{TAN2015493} highlighted the wealth of information contained in code comments and how this can be used to enhance software maintainability and reliability. He conducted a detailed study and analysis of both free-form and semistructured comments, demonstrating their potential to improve the overall quality and robustness of software systems.
+
+\noindent \textit{Pooja Rani} \cite{Rani2021} addressed the problem of evaluating code comments, exploring comment quality assessment from three perspectives:
+\begin{itemize}
+	\item \textbf{Developer Concerns}: the study investigates what developers ask about commenting practices, identifying a taxonomy of common concerns and challenges faced by developers when writing or generating code comments.
+	\item \textbf{Information Types}: it categorizes the various types of information embedded in class comments across different programming languages. An automated classification method using machine learning and NLP techniques is proposed to identify these comment types.
+	\item \textbf{Research Support}: a systematic literature review was conducted to compile a taxonomy of comment quality attributes and metrics, helping to develop a unified approach for assessing the quality of code comments based on empirical data.
+\end{itemize}
+
+\noindent \textit{Hao He} \cite{HaoHe19} investigated the patterns and practices of code commenting across different programming languages and project types. By analyzing 150 popular projects in five programming languages (\textit{JavaScript}, \textit{Java}, \textit{C++}, \textit{Python}, and \textit{Go}), the study reveals significant variations in comment density that may be influenced by the programming language and the project's purpose.
+
+\noindent \textit{Rani et al.}\cite{Rani2023} presented a comprehensive analysis of research on code comment quality from 2011 to 2020. The study reviewed 2353 papers and selected 47 relevant ones to address four key questions: (I) which types of comments researchers focus on, (II) the quality attributes (QAs) considered, (III) the tools and techniques used to assess comment quality, and (IV) how these studies were evaluated.
