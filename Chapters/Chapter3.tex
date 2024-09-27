@@ -103,5 +103,269 @@ If a comment meets all these criteria, it is considered coherent. Otherwise, it 
 \noindent Within the "other" sub-package, there are two additional scripts:
 	\begin{itemize}
 		\item \textbf{example\_csv\_conversion}: this script uses the similarly named sub-package in "data" to convert raw datasets into a more readable format for the tool.
-		\item \textbf{example\_nld\_comparison}: this script stems from a detailed study comparing the speed and accuracy of two NLP libraries, \href{https://spacy.io/}{\textit{spaCy}} and \href{https://fasttext.cc/}{\textit{fastText}}, for natural language detection. In our tool, language detection is essential for incomplete comment detection, as we first check whether a sentence is written in English. To evaluate the two libraries, we created a dictionary with words from eight different languages, then shuffled and combined them to generate a sample of 3,000 groups of sentences, where each is written in a different language. Both libraries successfully detected all languages, but spaCy took 99.51 seconds to complete, while fastText only required 24.25 seconds. Given its significantly superior speed, we opted for fastText for natural language detection in our tool.
+		\item \textbf{example\_nld\_comparison}: this script stems from a detailed study comparing the speed and accuracy of two NLP libraries, \href{https://spacy.io/}{\textit{spaCy}} and \href{https://fasttext.cc/}{\textit{fastText}}, for natural language detection. In our tool, language detection is essential for incomplete comment detection, as we first check whether a sentence is written in English. To evaluate the two libraries, we created a dictionary with words from eight different languages, then shuffled and combined them to generate a sample of 3,000 groups of sentences, where each is written in a different language. Both libraries successfully detected all languages, but spaCy took 99.51 seconds to complete, while fastText only required 24.25 seconds. Given its significantly superior speed, we opted for \textit{fastText} for natural language detection in our tool.
 	\end{itemize}
+	
+\section{Heuristics Used}
+We're now going to list all heuristics for each category from lack of comments quality.
+In all cases:
+
+\noindent Let \textit{C} represent a code block to be analyzed.
+
+\noindent Let \textit{M} represent the MIME type (format) of the code block.
+
+\noindent Let \textit{extract(C, M)} represent the function that extracts comments from \textit{C} based on MIME type \textit{M}.
+
+\noindent Let \textit{comment(i)} represent the i-th comment in the extracted list of comments from \textit{C}.
+
+\noindent Let \textit{text(i)} represent the text of the i-th comment.
+
+\subsection{Empty Comments}
+\noindent Let's define the empty comment condition as isEmpty\textit{(i)}, where: 
+\begin{equation*}
+	\textbf{isEmpty}(i) = \begin{cases}
+		1, & \text{if } \text{ strip(text\textit{(i)}) = ""} \\
+		0, & \text{ otherwise}
+	\end{cases}
+\end{equation*}
+where \textit{strip(text(i))} removes all leading and trailing whitespace from the comment.
+
+\noindent We define the function \textit{F(C, M)} that evaluates if the code block \textit{C} contains empty comments based on the MIME type \textit{M}:
+\begin{equation*}
+	F(C, M) = \begin{cases}
+		1, & \text{if } \exists i \text{ such that } \text{isEmpty}(i) = 1 \text{ for any comment } i \in \text{extract}(C, M) \\
+		0, & \text{ otherwise}
+	\end{cases}
+\end{equation*}
+
+\subsection{Comments Asking Questions}
+Let's define the set of interrogative phrases as:
+\begin{equation*}
+	I = \text{\{"why", "how", "what is", "what\\'s", "where\\'s", "where is", "where are", "how long"\}}
+\end{equation*}
+
+\noindent Then let's define the question condition as isQuestion\textit{(i)}, where:
+\begin{equation*}
+	\textbf{isQuestion}(i) = \begin{cases}
+		1, & \text{if } \text{text}(i) \text{.endswith("?")} \vee \text{text}(i) \text{.startswith}(I) \\
+		0, & \text{ otherwise}
+	\end{cases}
+\end{equation*}
+
+\noindent We define the function \textit{F(C, M)} that evaluates if the code block \textit{C} contains any questions based on the MIME type \textit{M}:
+\begin{equation*}
+	F(C, M) = \begin{cases}
+		1, & \text{if } \exists i \text{ such that } \text{isQuestion}(i) = 1 \text{ for any comment } i \in \text{extract}(C, M) \\
+		0, & \text{ otherwise}
+	\end{cases}
+\end{equation*}
+
+\subsection{Short Comments}
+Let T\textit{(i)} = tokenize(text\textit{(i)}) be the list of tokens in the i-th comment.
+
+\noindent Let's define a threshold for short comments as k = 5 (maximum number of tokens).
+
+\noindent Let's define the short comments condition as isShort\textit{(i)}, where:
+\begin{equation*}
+	\textbf{isShort}(i) = \begin{cases}
+		1, & \text{if } \mathrm{|T|}_{i} \le k \\
+		0, & \text{ otherwise}
+	\end{cases}
+	
+	\noindent \text{where} \mathrm{|T|}_{i} \text{ represents the number of tokens in the i-th comment.}
+\end{equation*}
+
+\noindent We define the function \textit{F(C, M)} that evaluates if the code block \textit{C} contains any short comments based on the MIME type \textit{M}:
+\begin{equation*}
+	F(C, M) = \begin{cases}
+		1, & \text{if } \exists i \text{ such that } \text{isShort}(i) = 1 \text{ for any comment } i \in \text{extract}(C, M) \\
+		0, & \text{ otherwise}
+	\end{cases}
+\end{equation*}
+
+\subsection{Long Comments}
+The heuristic is similar to that used for short comments, but in the first case, the comparison is reversed.
+It's inspired by the work of \textit{Steidl et al.} \cite{steidl2013}, but our approach uses tokens rather than words.
+
+\noindent Let's define a threshold for long comments as k = 30 (minimum number of tokens).
+
+\noindent Let's define the long comments condition as isLong\textit{(i)}, where:
+\begin{equation*}
+	\textbf{isLong}(i) = \begin{cases}
+		1, & \text{if } \mathrm{|T|}_{i} \ge k \\
+		0, & \text{ otherwise}
+	\end{cases}
+	
+	\noindent \text{where} \mathrm{|T|}_{i} \text{ represents the number of tokens in the i-th comment.}
+\end{equation*}
+
+\begin{equation*}
+	F(C, M) = \begin{cases}
+		1, & \text{if } \exists i \text{ such that } \text{isLong}(i) = 1 \text{ for any comment } i \in \text{extract}(C, M) \\
+		0, & \text{ otherwise}
+	\end{cases}
+\end{equation*}
+
+\subsection{Comments Under Development}
+This heuristic is inspired by the work of \textit{Shi et al.} \cite{buildingRock}.
+
+\noindent Let's define the following sets of keywords:
+	\begin{itemize}
+		\item \textit{P} = placeholder keywords, e.g., "Description of the Method", "Logic goes here".
+		\item \textit{N} = temporary notes, e.g., "Add more info here", "Temporary fix for issue".
+		\item \textit{D} = vague descriptions, e.g., "To be documented", "Work in progress".
+		\item \textit{R} = redundant keys, e.g., "Opens a file", "Calls the method".
+		\item Let $\mathrm{R}_{M}$ represent a set of MIME-type specific patterns to detect commented methods (e.g., method definitions in Java, Python, etc.).
+	\end{itemize}
+	
+\noindent Let\begin{math*}
+	regexMatch(\textit{i, P, N, D, R, } \mathrm{R}_{M})
+\end{math*} be a function that checks whether any of the patterns defined by \begin{math*}\textit{P, N, D, R, } \mathrm{R}_{M} \end{math*} match the comment text \textit{text(i)}.
+
+\noindent Let's define the under development condition as isUnderDevelopment\textit{(i)}, where:
+\begin{equation*}
+	\textbf{isUnderDevelopment}(i) = \begin{cases}
+		1, & \text{if } \text{regexMatch(i, P, N, D, R, }  \mathrm{R}_{M}) = 1 \\
+		0, & \text{ otherwise}
+	\end{cases}
+\end{equation*}
+
+\noindent We define the function \textit{F(C, M)} that evaluates if the code block \textit{C} contains any comments indicative of being "under development" based on the MIME type \textit{M}:
+\begin{equation*}
+	F(C, M) = \begin{cases}
+		1, & \text{if } \exists i \text{ such that } \text{isUnderDevelopment}(i) = 1 \text{ for any comment } i \in \text{extract}(C, M) \\
+		0, & \text{ otherwise}
+	\end{cases}
+\end{equation*}
+
+\subsection{Incomplete Comments}
+Let \textit{SML} represent groups of comments classified by \textit{CommentGroupsDetector} into single-line or multi-line.
+
+\noindent Let \textit{DOC} represent the group of comments classified as documentation by \textit{CommentGroupsDetector}.
+
+\noindent Let's assume we're able to detect different types of comment formats (e.g., \textit{Google}, \textit{NumPy}, \textit{ReST}, \textit{epytext}, \textit{Javadoc}) based on the detected structure of comments and the programming language.
+
+\noindent For single-line and multi-line comments, first we have to check whether a comment is written in English.
+\begin{equation*}
+	\mathrm{F}_{english}(comment) = \begin{cases}
+		1, & \text{if the comment} \in \textit{SML } \wedge \text{ is classified as English} \\
+		0, & \text{if the comment} \in \textit{SML } \text{ but is in a different language}
+	\end{cases}
+\end{equation*}
+
+\noindent Then, we check the syntactic completeness of a comment by verifying if each sentence contains a subject and a predicate, assuming the comment $\in$ \textit{SML}.
+\begin{equation*}
+	\mathrm{F}_{syntax}(comment) = \begin{cases}
+		1, & \text{if  } \exists \text{sentence} \in \text{comment syntactically incomplete} \\
+		0, & \text{if all sentences are complete}
+	\end{cases}
+\end{equation*}
+
+\noindent Lastly, we evaluate whether a comment, assumed $\in$ \textit{SML}, is gibberish using a pre-trained model \cite{gibberishDetector} that classifies comments into various categories.
+\begin{equation*}
+	\mathrm{F}_{gibberish}(comment) = \begin{cases}
+		1, & \text{if  } \exists \text{sentence} \in \text{comment classified as gibberish} \\
+		0, & \text{if all sentences are clean}
+	\end{cases}
+\end{equation*}
+
+\noindent For documentation comments, we must check if a comment is missing any critical part in annotation tags (wrong number of params, lack of return type) compared to the code block it refers to.
+
+\noindent Let $\mathrm{P}_{comment}$ represent the number of @param annotations in the comment, assuming comment $\in$ \textit{DOC}.
+
+\noindent Let $\mathrm{R}_{comment}$ represent the number of @return annotations in the comment (which can be only 0 or 1), assuming comment $\in$ \textit{DOC}.
+
+\noindent We check the number of parameters in the function signature.
+\begin{equation*}
+	\mathrm{F}_{params}(C) = \begin{cases}
+		n, & \text{if the function has parameters} \\
+		0, & \text{if no parameters exist}
+	\end{cases}
+\end{equation*}
+
+\noindent Then, we check the return type in the function signature.
+\begin{equation*}
+	\mathrm{F}_{return}(C) = \begin{cases}
+		1, & \text{if it returns a value other than void
+		} \\
+		0, & \text{if it returns void or no return type is found}
+	\end{cases}
+\end{equation*}
+
+\noindent To conclude we can say that, for a single-line or multi-line comment to be incomplete, the following conditions must be met:
+	\begin{enumerate}
+		\item The comment is in English.
+		\item The comment is syntactically incomplete.
+		\item The comment contains gibberish.
+	\end{enumerate}
+	
+\noindent Thus, the overall incompleteness function for single-line or multi-line comments $\mathrm{F}_{incomplete}^{SML}$ can be expressed as:
+\begin{equation*}
+	\mathrm{F}_{incomplete}^{SML} = \begin{cases}
+		1, & \text{if } \mathrm{F}_{english}(comment) = 1 \wedge \mathrm{F}_{syntax}(comment) = 1 \wedge \mathrm{F}_{gibberish}(comment) = 1 \\
+		0, & \text{otherwise}
+	\end{cases}
+\end{equation*}
+
+\noindent For a documentation comment to be incomplete, it means there is either a mismatch between the number of \textit{@param} annotations and the actual number of parameters, or a mismatch between the presence of a \textit{@return} annotation and whether the function actually returns a value.
+
+\noindent This implies that the incompleteness function for documentation comments $\mathrm{F}_{incomplete}^{DOC}$ can be expressed as:
+\begin{equation*}
+	\mathrm{F}_{incomplete}^{DOC} = \begin{cases}
+		1, & \text{if } \mathrm{P}_{comment} \ne \mathrm{F}_{params}(C) \\
+		1, & \text{if } \mathrm{R}_{comment} = 1 \wedge \mathrm{F}_{return}(C) = 0 \\
+		1, & \text{if } \mathrm{R}_{comment} = 0 \wedge \mathrm{F}_{return}(C) = 1 \\
+		0, & \text{otherwise}
+	\end{cases}
+\end{equation*}
+
+\subsection{Uneven Comments Format}
+Let \textit{sl} be the group of single-line comments, \textit{ml} the group of multi-line comments and \textit{doc} the group of documentation comments.
+
+\noindent Let \textit{SF} be the single-line way of comment formatting (e.g, // in \textit{Java}, # in \textit{Python}).
+
+\noindent Let \textit{MF} be the multi-line way of comment formatting (e.g, /* or /** in \textit{Java}, ''' or """ in \texit{Python})
+
+\noindent Let \textit{S} be a sentence $\in$ comment.
+
+\noindent Let spaces\textit{(S)} represent the number of spaces in that sentence.
+
+\noindent Let \textit{K} be the maximum number of spaces allowed per sentence.
+
+\noindent We have a function that checks whether there are too many spaces (more than \textit{K} consecutive) in any sentence from the comment, which could indicate indentation issues.
+\begin{equation*}
+	\mathrm{F}_{spacing} = \begin{cases}
+		1, & \text{if } \exists S \in comment : spaces(S) > K \\
+		0, & \text{otherwise}
+	\end{cases}
+\end{equation*}
+
+\noindent For a single-line comment to be uneven, we check the number of spaces or if it matches the multi-line format.
+\begin{equation*}
+	\mathrm{F}_{uneven}^{\textit{ sl}}(comment, MF) = \begin{cases}
+		1, & \text{if } \mathrm{F}_{spacing} = 1 \vee match(comment, MF) \\
+		0, & \text{otherwise}
+	\end{cases}
+\end{equation*}
+
+\noindent For a multi-line comment to be uneven, we do the opposite.
+\begin{equation*}
+	\mathrm{F}_{uneven}^{\textit{ ml}}(comment, SF) = \begin{cases}
+		1, & \text{if } \mathrm{F}_{spacing} = 1 \vee match(comment, SF) \\
+		0, & \text{otherwise}
+	\end{cases}
+\end{equation*}
+
+\noindent For documentation comments, we have a function that checks for irregularities in the use of annotation tags (e.g, wrong indentation, empty annotation, wrong token after annotation, ends with annotation). In particular, if the annotation is \textit{@author} and the following token is a verb, it makes no sense. If the annotation is followed by a redundant token (e.g, @return nothing), it should be avoided.
+
+\noindent Let \textit{rdt[]} be an array of possible redundant words after an annotation (e.g, author, param, nothing, none, void).
+Assume comment $\in$ doc, and the current token is an annotation.
+\begin{equation*}
+	\mathrm{F}_{irr}(comment) = \begin{cases}
+		1, & \text{if } \text{token} = \textit{'@author'} \wedge \text{token\textit{.next}} \in \text{'VERB'} \\
+		1, & \text{if } isSpace(token.next) = 1 \wedge \mathrm{F}_{spacing} = 1 \\
+		1, & \text{if } isEmpty(token.next) = 1 \\
+		1, & \text{if } token.next \in rdt[] \\
+		0, & \text{otherwise}
+	\end{cases}
+\end{equation*}

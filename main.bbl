@@ -270,6 +270,35 @@
     \field{year}{2019}
   \endentry
 
+  \entry{gibberishDetector}{misc}{}
+    \name{author}{1}{}{%
+      {{hash=JM}{%
+         family={Jindal},
+         familyi={J\bibinitperiod},
+         given={Madhur},
+         giveni={M\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Hugging Face}%
+    }
+    \strng{namehash}{JM1}
+    \strng{fullhash}{JM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{J}
+    \field{sortinithash}{J}
+    \verb{doi}
+    \verb 10.57967/hf/2664
+    \endverb
+    \field{title}{autonlp-Gibberish-Detector-492513457 (Revision 34458f9)}
+    \verb{url}
+    \verb https://huggingface.co/madhurjindal/autonlp-Gibberish-Detector-492513
+    \verb 457
+    \endverb
+    \field{year}{2024}
+  \endentry
+
   \entry{javadocMiner}{inproceedings}{}
     \name{author}{3}{}{%
       {{hash=KN}{%
