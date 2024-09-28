@@ -320,11 +320,13 @@ Let \textit{SML} represent groups of comments classified by \textit{CommentGroup
 \end{equation*}
 
 \subsection{Uneven Comments Format}
-Let \textit{sl} be the group of single-line comments, \textit{ml} the group of multi-line comments and \textit{doc} the group of documentation comments.
+Let \textit{SL} be the group of single-line comments, \textit{ML} the group of multi-line comments and \textit{DOC} the group of documentation comments.
 
 \noindent Let \textit{SF} be the single-line way of comment formatting (e.g, // in \textit{Java}, # in \textit{Python}).
 
 \noindent Let \textit{MF} be the multi-line way of comment formatting (e.g, /* or /** in \textit{Java}, ''' or """ in \texit{Python})
+
+\noindent Let \textit{TAGS} be an array of commonly used HTML tags in Javadoc comments.
 
 \noindent Let \textit{S} be a sentence $\in$ comment.
 
@@ -334,38 +336,47 @@ Let \textit{sl} be the group of single-line comments, \textit{ml} the group of m
 
 \noindent We have a function that checks whether there are too many spaces (more than \textit{K} consecutive) in any sentence from the comment, which could indicate indentation issues.
 \begin{equation*}
-	\mathrm{F}_{spacing} = \begin{cases}
+	\mathrm{F}_{spacing}(comment) = \begin{cases}
 		1, & \text{if } \exists S \in comment : spaces(S) > K \\
+		0, & \text{otherwise}
+	\end{cases}
+\end{equation*}
+
+\noindent Single-line and multi-line comments shouldn't contain any HTML tags, as they are treated as plain text.
+Assuming comment $\in$ \textit{SL} $\vee$ comment $\in$ \textit{ML}:
+\begin{equation*}
+	hasTags(comment) = \begin{cases}
+		1, & \text{if } \exists T \subset TAGS : T \in comment \\
 		0, & \text{otherwise}
 	\end{cases}
 \end{equation*}
 
 \noindent For a single-line comment to be uneven, we check the number of spaces or if it matches the multi-line format.
 \begin{equation*}
-	\mathrm{F}_{uneven}^{\textit{ sl}}(comment, MF) = \begin{cases}
-		1, & \text{if } \mathrm{F}_{spacing} = 1 \vee match(comment, MF) \\
+	\mathrm{F}_{uneven}^{\textit{ SL}}(comment, MF) = \begin{cases}
+		1, & \text{if } \mathrm{F}_{spacing} = 1 \vee hasTags(comment) = 1 \vee match(comment, MF) \\
 		0, & \text{otherwise}
 	\end{cases}
 \end{equation*}
 
 \noindent For a multi-line comment to be uneven, we do the opposite.
 \begin{equation*}
-	\mathrm{F}_{uneven}^{\textit{ ml}}(comment, SF) = \begin{cases}
-		1, & \text{if } \mathrm{F}_{spacing} = 1 \vee match(comment, SF) \\
+	\mathrm{F}_{uneven}^{\textit{ ML}}(comment, SF) = \begin{cases}
+		1, & \text{if } \mathrm{F}_{spacing} = 1 \vee hasTags(comment) = 1 \vee match(comment, SF) \\
 		0, & \text{otherwise}
 	\end{cases}
 \end{equation*}
 
 \noindent For documentation comments, we have a function that checks for irregularities in the use of annotation tags (e.g, wrong indentation, empty annotation, wrong token after annotation, ends with annotation). In particular, if the annotation is \textit{@author} and the following token is a verb, it makes no sense. If the annotation is followed by a redundant token (e.g, @return nothing), it should be avoided.
 
-\noindent Let \textit{rdt[]} be an array of possible redundant words after an annotation (e.g, author, param, nothing, none, void).
-Assume comment $\in$ doc, and the current token is an annotation.
+\noindent Let \textit{RDT} be an array of possible redundant words after an annotation (e.g, author, param, nothing, none, void).
+Assume comment $\in$ \textit{DOC}, and the current token is an annotation.
 \begin{equation*}
-	\mathrm{F}_{irr}(comment) = \begin{cases}
+	\mathrm{F}_{irr}^{\textit{ DOC}}(comment) = \begin{cases}
 		1, & \text{if } \text{token} = \textit{'@author'} \wedge \text{token\textit{.next}} \in \text{'VERB'} \\
 		1, & \text{if } isSpace(token.next) = 1 \wedge \mathrm{F}_{spacing} = 1 \\
 		1, & \text{if } isEmpty(token.next) = 1 \\
-		1, & \text{if } token.next \in rdt[] \\
+		1, & \text{if } token.next \in RDT \\
 		0, & \text{otherwise}
 	\end{cases}
 \end{equation*}
