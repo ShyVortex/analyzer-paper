@@ -103,6 +103,9 @@
     \field{number}{10}
     \field{pages}{3\bibrangedash 9}
     \field{title}{Coding and Comment Style}
+    \verb{url}
+    \verb https://mitcommlab.mit.edu/broad/commkit/coding-and-comment-style/
+    \endverb
     \field{volume}{1}
     \field{journaltitle}{MIT Communication Lab}
     \field{year}{2019}
