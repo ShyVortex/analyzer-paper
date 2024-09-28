@@ -270,6 +270,58 @@
     \field{year}{2019}
   \endentry
 
+  \entry{CSN}{misc}{}
+    \name{author}{5}{}{%
+      {{hash=HH}{%
+         family={Husain},
+         familyi={H\bibinitperiod},
+         given={Hamel},
+         giveni={H\bibinitperiod},
+      }}%
+      {{hash=WHH}{%
+         family={Wu},
+         familyi={W\bibinitperiod},
+         given={Ho-Hsiang},
+         giveni={H\bibinithyphendelim H\bibinitperiod},
+      }}%
+      {{hash=GT}{%
+         family={Gazit},
+         familyi={G\bibinitperiod},
+         given={Tiferet},
+         giveni={T\bibinitperiod},
+      }}%
+      {{hash=AM}{%
+         family={Allamanis},
+         familyi={A\bibinitperiod},
+         given={Miltiadis},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=BM}{%
+         family={Brockschmidt},
+         familyi={B\bibinitperiod},
+         given={Marc},
+         giveni={M\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{HH+1}
+    \strng{fullhash}{HHWHHGTAMBM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{H}
+    \field{sortinithash}{H}
+    \verb{eprint}
+    \verb 1909.09436
+    \endverb
+    \field{title}{CodeSearchNet Challenge: Evaluating the State of Semantic
+  Code Search}
+    \verb{url}
+    \verb https://arxiv.org/abs/1909.09436
+    \endverb
+    \field{eprinttype}{arXiv}
+    \field{eprintclass}{cs.LG}
+    \field{year}{2020}
+  \endentry
+
   \entry{gibberishDetector}{misc}{}
     \name{author}{1}{}{%
       {{hash=JM}{%
@@ -369,6 +421,87 @@
       {Berlin, Heidelberg}%
     }
     \field{year}{2010}
+  \endentry
+
+  \entry{AUGER}{inproceedings}{}
+    \name{author}{8}{}{%
+      {{hash=LL}{%
+         family={Li},
+         familyi={L\bibinitperiod},
+         given={Lingwei},
+         giveni={L\bibinitperiod},
+      }}%
+      {{hash=YL}{%
+         family={Yang},
+         familyi={Y\bibinitperiod},
+         given={Li},
+         giveni={L\bibinitperiod},
+      }}%
+      {{hash=JH}{%
+         family={Jiang},
+         familyi={J\bibinitperiod},
+         given={Huaxi},
+         giveni={H\bibinitperiod},
+      }}%
+      {{hash=YJ}{%
+         family={Yan},
+         familyi={Y\bibinitperiod},
+         given={Jun},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=LT}{%
+         family={Luo},
+         familyi={L\bibinitperiod},
+         given={Tiejian},
+         giveni={T\bibinitperiod},
+      }}%
+      {{hash=HZ}{%
+         family={Hua},
+         familyi={H\bibinitperiod},
+         given={Zihan},
+         giveni={Z\bibinitperiod},
+      }}%
+      {{hash=LG}{%
+         family={Liang},
+         familyi={L\bibinitperiod},
+         given={Geng},
+         giveni={G\bibinitperiod},
+      }}%
+      {{hash=ZC}{%
+         family={Zuo},
+         familyi={Z\bibinitperiod},
+         given={Chun},
+         giveni={C\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Association for Computing Machinery}%
+    }
+    \strng{namehash}{LL+1}
+    \strng{fullhash}{LLYLJHYJLTHZLGZC1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{L}
+    \field{sortinithash}{L}
+    \field{booktitle}{Proceedings of the 30th ACM Joint European Software
+  Engineering Conference and Symposium on the Foundations of Software
+  Engineering}
+    \verb{doi}
+    \verb 10.1145/3540250.3549099
+    \endverb
+    \field{isbn}{9781450394130}
+    \field{pages}{1009–1021}
+    \field{series}{ESEC/FSE 2022}
+    \field{title}{AUGER: automatically generating review comments with
+  pre-training models}
+    \verb{url}
+    \verb https://doi.org/10.1145/3540250.3549099
+    \endverb
+    \list{location}{1}{%
+      {Singapore, Singapore}%
+    }
+    \field{year}{2022}
+    \warn{\item Can't use 'location' + 'address'}
   \endentry
 
   \entry{codeReadability}{inproceedings}{}

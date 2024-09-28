@@ -1,0 +1,55 @@
+% Chapter 4
+
+\chapter{Empirical Study} % Main chapter title
+
+\label{Chapter4} % For referencing the chapter elsewhere, use \ref{Chapter1} 
+
+%----------------------------------------------------------------------------------------
+
+Our goal is to develop a tool capable of detecting lack of quality in comments from large code-related datasets with the highest level of precision possible. In the field of code comment analysis, researchers have explored various metrics and models to evaluate comment quality, categorizing comments in programming languages like \textit{Java} and \textit{Python}. However, to our knowledge, these efforts are limited to only a few languages.
+Looking forward, it is highly likely that researchers will aim to extend these models to cover a broader range of programming languages while improving the accuracy of their assessments. Future works will also increasingly incorporate artificial intelligence (AI) and machine learning techniques, which rely heavily on vast datasets to function effectively. As these approaches evolve, access to high-quality datasets with a large number of diverse instances will become essential.
+To achieve this, automating the retrieval of such instances is crucial. This will enable the collection of comprehensive datasets that not only support the refinement of existing comment quality models but also facilitate the development of more robust and versatile tools capable of analyzing code comments across multiple programming languages with precision and scalability.
+
+\section{Study Design}
+The goal of this study is to understand to what extent the proposed heuristics allow to detect true comments lacking quality. Our study is steered by the following research
+question:
+\begin{large}
+	\begin{Center}
+		\textbf{RQ:} With which level of precision is it possible to automatically recognize poor-quality comments in large code-related datasets?
+	\end{Center}
+\end{large}
+
+\subsection{Data Collection}
+To validate our heuristic, we focused on two datasets: CSN \cite{CSN} and AUGER \cite{AUGER}. From CSN, we selected a sample of 384 instances, while for AUGER, we used their case-study sample of 100 instances. This approach was defined aiming to select only datasets which could possibly improve our detection.
+
+\subsection{Data Analysis}
+We manually analyzed the comments from both samples, assigning a value of 0 when the comment did not meet a detection criteria, and 1 when it did. In ambiguous cases, we defaulted to 0.
+We then validated our heuristic by comparing its results against our manual annotations, using the metrics of accuracy, precision, recall, and f1score for each criteria. These metrics were computed with the following formulas:
+\begin{equation*}
+	accuracy = \frac{TP + TN}{TP + TN + FP + FN}		
+\end{equation*}
+\begin{equation*}
+	precision = \frac{TP}{TP + FP}
+\end{equation*}
+\begin{equation*}
+	recall = \frac{TP}{TP + FN}
+\end{equation*}
+\begin{equation*}
+	f1score = 2 \times \frac{precision \times recall}{precision + recall}
+\end{equation*}
+With the term TP we indicate those comments that are caught by our heuristics in one of the detection criteria. With the term TN we indicate those comments that are not caughty by our heuristics in one or any of the detection criteria. With the term FP we indicate those comments that are detected by our heuristic in one of the criteria but actually shouldn't. With the term FN we indicate those comments that aren't detected by our heuristic in one or any of the criteria but actually should.
+
+\section{Study Results}
+TODO
+
+\section{Threats to Validity}
+This section discusses the threats to validity of this heuristic. Specifically, (I) construction validity regarding manual testing, (II) internal validity regarding possible impairment of results and (III) external validity regarding the dataset.
+
+\subsection{Construct Validity}
+We have detailed the logic behind our heuristics and described the validation process used to evaluate their effectiveness by extracting key metrics. The heuristics were tested on 384 instances from the \textit{CSN} dataset and 100 instances from \textit{AUGER}. This process involved manually labeling each comment, meaning that any misinterpretation of the comments could potentially compromise the validity of the results. To mitigate this risk, we thoroughly reviewed and examined all comments multiple times to ensure accuracy and reduce the likelihood of errors in interpretation.
+
+\subsection{Internal Validity}
+To address the research question, we developed heuristics grounded in our knowledge of the domain. This approach involved incorporating our own insights and patterns related to comment analysis, which may have introduced some subjectivity, particularly in the more complex detectors, such as those for incomplete comments and uneven comment formatting. However, we aimed to select rules that are broadly applicable and objective, while maintaining a disciplined approach to minimize subjectivity and ensure consistency in our criteria.
+
+\subsection{External Validity}
+TODO
