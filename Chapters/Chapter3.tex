@@ -299,9 +299,9 @@ Let \textit{SML} represent groups of comments classified by \textit{CommentGroup
 		\item The comment contains gibberish.
 	\end{enumerate}
 	
-\noindent Thus, the overall incompleteness function for single-line or multi-line comments $\mathrm{F}_{incomplete}^{SML}$ can be expressed as:
+\noindent Thus, the overall incompleteness function for single-line or multi-line comments $\mathrm{F}_{incomplete}^{\textit{ SML}}$ can be expressed as:
 \begin{equation*}
-	\mathrm{F}_{incomplete}^{SML} = \begin{cases}
+	\mathrm{F}_{incomplete}^{\textit{ SML}} = \begin{cases}
 		1, & \text{if } \mathrm{F}_{english}(comment) = 1 \wedge \mathrm{F}_{syntax}(comment) = 1 \wedge \mathrm{F}_{gibberish}(comment) = 1 \\
 		0, & \text{otherwise}
 	\end{cases}
@@ -309,9 +309,9 @@ Let \textit{SML} represent groups of comments classified by \textit{CommentGroup
 
 \noindent For a documentation comment to be incomplete, it means there is either a mismatch between the number of \textit{@param} annotations and the actual number of parameters, or a mismatch between the presence of a \textit{@return} annotation and whether the function actually returns a value.
 
-\noindent This implies that the incompleteness function for documentation comments $\mathrm{F}_{incomplete}^{DOC}$ can be expressed as:
+\noindent This implies that the incompleteness function for documentation comments $\mathrm{F}_{incomplete}^{\textit{ DOC}}$ can be expressed as:
 \begin{equation*}
-	\mathrm{F}_{incomplete}^{DOC} = \begin{cases}
+	\mathrm{F}_{incomplete}^{\textit{ DOC}} = \begin{cases}
 		1, & \text{if } \mathrm{P}_{comment} \ne \mathrm{F}_{params}(C) \\
 		1, & \text{if } \mathrm{R}_{comment} = 1 \wedge \mathrm{F}_{return}(C) = 0 \\
 		1, & \text{if } \mathrm{R}_{comment} = 0 \wedge \mathrm{F}_{return}(C) = 1 \\
