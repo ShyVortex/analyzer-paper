@@ -17,6 +17,41 @@
 \endgroup
 
 \datalist[entry]{nty/global//global/global}
+  \entry{NLTK}{book}{}
+    \name{author}{3}{}{%
+      {{hash=BS}{%
+         family={Bird},
+         familyi={B\bibinitperiod},
+         given={Steven},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=KE}{%
+         family={Klein},
+         familyi={K\bibinitperiod},
+         given={Ewan},
+         giveni={E\bibinitperiod},
+      }}%
+      {{hash=LE}{%
+         family={Loper},
+         familyi={L\bibinitperiod},
+         given={Edward},
+         giveni={E\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {" O'Reilly Media, Inc."}%
+    }
+    \strng{namehash}{BSKELE1}
+    \strng{fullhash}{BSKELE1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{B}
+    \field{sortinithash}{B}
+    \field{title}{Natural language processing with Python: analyzing text with
+  the natural language toolkit}
+    \field{year}{2009}
+  \endentry
+
   \entry{CHEN201945}{article}{}
     \name{author}{6}{}{%
       {{hash=CH}{%
