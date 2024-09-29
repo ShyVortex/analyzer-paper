@@ -14,6 +14,16 @@ The development of our tool followed a structured, multi-step approach. As outli
 	\label{fig:goal-schema}
 \end{figure}
 
+\begin{itemize}
+	\item \textbf{Empty comments}: these provide no value or clarity and should be flagged for immediate attention.
+	\item \textbf{Comments asking questions}: whether direct or implied, questions undermine the purpose of comments, which should provide clear and definitive information.
+	\item \textbf{Short comments}: these fail to offer sufficient context or detail, leaving readers without a clear understanding of the code’s functionality or purpose.
+	\item \textbf{Long comments}: excessively detailed comments can overwhelm readers, leading to confusion and obscuring the main point of the explanation.
+	\item \textbf{Comments under development}: these temporary, technical comments are relevant only to active developers and must be regularly updated or removed as the system evolves.
+	\item \textbf{Incomplete comments}: these lack full explanations, leaving gaps in the intended message, making them unclear or difficult to understand.
+	\item \textbf{Uneven comments format}: inconsistent formatting or structure hinders readability, making it harder to follow and maintain the code. Comments should be clear, consistent, and well-structured to enhance usability.
+\end{itemize}
+
 \noindent We began with simpler detections, such as identifying empty comments and comments that posed questions. Established rules were applied to determine if a comment was empty or contained either direct or implied questions.
 
 \noindent Next, we tackled short and long comments. To achieve this, we utilized NLTK \cite{NLTK}, a comprehensive suite for natural language processing. By tokenizing each comment, we measured its length to classify it as either too short or overly long.
@@ -42,12 +52,9 @@ The development of our tool followed a structured, multi-step approach. As outli
 	\label{fig:zoom-data}
 \end{figure}
 
-\noindent The "data" package consists of three sub-packages:
-	\begin{itemize}
-		\item \textbf{sets}: defines the supported dataset file formats that our tool can read.
-		\item \textbf{dataset}: provides a common interface for loading and working with data, used by \textit{PreTrainingDataset} and \textit{FineTuningDataset} to handle specific datasets.
-		\item \textbf{csv\_conversion}: includes the \textit{DatasetConverter} class, which is used in cases where dataset format conversion is necessary.
-	\end{itemize}
+\noindent The "data" package defines the supported dataset file formats our tool is able to read, provides a common interface for loading and working with datasets, and handles dataset format conversion when necessary.
+
+\newpage
 	
 \begin{figure}[ht]
 	\centering\includegraphics[width=465pt]{figs/zoom-cmsquality.PNG}
@@ -56,9 +63,7 @@ The development of our tool followed a structured, multi-step approach. As outli
 	\label{fig:zoom-cmsquality}
 \end{figure}
 	
-\noindent The "smells" package houses several detectors, but for the purpose of this work, I will focus solely on those that align with the scope of our study.
-
-\noindent We begin by detailing essential components without which our tool wouldn't function.
+\noindent The "smells" package houses several detectors, but for the purpose of this work, we will focus solely on those that align with the scope of our study. We begin by detailing essential components without which our tool wouldn't function.
 
 \begin{figure}[ht]
 	\centering\includegraphics[width=400pt]{figs/zoom-extra.PNG}
@@ -85,13 +90,7 @@ If a comment meets all these criteria, it is considered coherent. Otherwise, it 
 	
 \section{Heuristics Used}
 We will list the heuristics for each category related to the lack of comment quality.
-In all cases, the following notations can be used:
-
-\noindent Let \textit{C} be a code block to be analyzed.
-
-\noindent Let \textit{M} be the MIME type of the code block.
-
-\noindent Let \textit{extract(C, M)} be a method that extracts comments from \textit{C} based on MIME type \textit{M}.
+In all cases, the following notations can be used: let \textit{C} be a code block to be analyzed, let \textit{M} be the MIME type of the code block, let \textit{extract(C, M)} be a method that extracts comments from \textit{C} based on MIME type \textit{M}.
 
 \noindent Let \textit{comment(i)} represent the i-th comment in the extracted list of comments from \textit{C}.
 
@@ -301,7 +300,7 @@ Let \textit{SL} be the group of single-line comments, \textit{ML} the group of m
 
 \noindent Let \textit{SF} be the single-line way of comment formatting (e.g, // in \textit{Java}, # in \textit{Python}).
 
-\noindent Let \textit{MF} be the multi-line way of comment formatting (e.g, /* or /** in \textit{Java}, ''' or """ in \texit{Python})
+\noindent Let \textit{MF} be the multi-line way of comment formatting (e.g, /* or /** in \textit{Java}, ''' or """ in \textit{Python})
 
 \noindent Let \textit{TAGS} be an array of commonly used HTML tags in Javadoc comments.
 

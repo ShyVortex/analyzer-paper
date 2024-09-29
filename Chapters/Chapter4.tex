@@ -20,7 +20,14 @@ question:
 \end{large}
 
 \subsection{Data Collection}
-In order to validate our heuristic, we concentrated on two datasets: CSN \cite{CSN} and AUGER \cite{AUGER}, selecting a sample of 384 instances from each. This approach was defined aiming to select only datasets which could possibly improve our detection.
+In order to validate our heuristic, we concentrated on two datasets: CSN \cite{CSN} and AUGER \cite{AUGER}, both of which are vastly utilized in literature.
+
+\noindent CSN is a large-scale dataset designed to facilitate semantic code search, which is the process of retrieving relevant code snippets based on natural language queries.
+The dataset includes over 6 million functions from six programming languages, but our subset focuses solely on \textit{Java}.
+
+\noindent AUGER is designed for generating automated review comments in code reviews, using the Text-to-Text Transfer Transformer (T5) pre-trained model. The dataset includes data collected from 11 notable Java open-source projects on GitHub.
+
+\noindent We selected two case-study samples of 384 instances from each dataset.
 
 \subsection{Data Analysis}
 We manually analyzed the comments from both samples, assigning a value of 0 when the comment did not meet a detection criteria, and 1 when it did. In ambiguous cases, we defaulted to 0. 

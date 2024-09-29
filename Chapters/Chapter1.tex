@@ -35,26 +35,16 @@ The presence of multi-line comments was found to significantly enhance the perfo
 \noindent Comments are also important in the context of code summarization tasks \cite{buildingRock}.
 High-quality comments enhance the ability of code summarization models to generate accurate and useful descriptions of source code. However, it's also noted how noisy or poor-quality comments can significantly reduce the effectiveness of these models.
 
-\noindent Given their importance in both software development and model training for code-tasks, I found it necessary to perform an in-depth study of this subject. Developing a comment analysis system \cite{commentAnalysis} is not an easy task, as it requires a deep understanding of the rules governing the programming language in which the code is written, alongside ensuring computational accuracy and efficiency when processing comment data.
+\noindent Given their importance in both software development and model training for code-tasks, it was necessary and important to perform an in-depth study, taking on this challenge. Developing a comment analysis system \cite{commentAnalysis} is not an easy task, as it requires a deep understanding of the rules governing the programming language in which the code is written, alongside ensuring computational accuracy and efficiency when processing comment data.
 
 \noindent Additionally, the content of comments can often be complex or ambiguous, making it difficult for automated heuristics to handle certain scenarios correctly. In such cases, manual review may be necessary to address edge cases or interpret unclear comments.
 Therefore, it is crucial to ensure that the system is robust and effective for the vast majority of use cases, while acknowledging that some instances may require additional intervention.
 
-\noindent The goal of this work is to develop an approach for the automatic analysis of large code-related datasets to identify comments that lack adequate quality. The analysis focuses on several key criteria:
-\begin{itemize}
-	\item \textbf{Empty comments}: these provide no value or clarity and should be flagged for immediate attention.
-	\item \textbf{Comments asking questions}: whether direct or implied, questions undermine the purpose of comments, which should provide clear and definitive information.
-	\item \textbf{Short comments}: these fail to offer sufficient context or detail, leaving readers without a clear understanding of the code’s functionality or purpose.
-	\item \textbf{Long comments}: excessively detailed comments can overwhelm readers, leading to confusion and obscuring the main point of the explanation.
-	\item \textbf{Comments under development}: these temporary, technical comments are relevant only to active developers and must be regularly updated or removed as the system evolves.
-	\item \textbf{Incomplete comments}: these lack full explanations, leaving gaps in the intended message, making them unclear or difficult to understand.
-	\item \textbf{Uneven comments format}: inconsistent formatting or structure hinders readability, making it harder to follow and maintain the code. Comments should be clear, consistent, and well-structured to enhance usability.
-\end{itemize}
-
 \section{Results}
-We applied NLP techniques in some cases to enhance the quality of the output, conducting an empirical study to evaluate the effectiveness of our approach on a sample dataset consisting of manually selected instances.
+We applied NLP techniques in some cases to enhance the quality of the output, conducting an empirical study to evaluate the effectiveness of our approach on sample datasets consisting of manually selected instances.
 
-\noindent Then we compared the automated results produced by our tool with a thorough manual analysis of the same sample, trying to ensure the error rate of our tool stayed within a ±5\% margin. Finally, we identified the key limitations of our approach and provided recommendations for future research and improvements. The main contributions of this paper can be summarized as follows:
+\noindent Then we compared the automated results produced by our tool with a thorough manual analysis of the same sample, trying to ensure the error rate of our tool stayed within a ±5\% margin. 
+After analyzing the aforementioned datasets, we discovered, for instance, that a significant portion of comments are excessively long, and approximately 20\% of documentation comments are left incomplete. Finally, we identified the key limitations of our approach and provided recommendations for future research and improvements. The main contributions of this paper can be summarized as follows:
 \begin{itemize}
     \item We proposed an analysis tool for automatic detection of lack of comments quality, evaluated under different criteria;
     \item We used a set of carefully selected datasets to train our approach;

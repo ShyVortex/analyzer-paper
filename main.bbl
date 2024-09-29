@@ -52,6 +52,99 @@
     \field{year}{2009}
   \endentry
 
+  \entry{Borstler2023}{article}{}
+    \name{author}{11}{}{%
+      {{hash=BJ}{%
+         family={B{\"o}rstler},
+         familyi={B\bibinitperiod},
+         given={J{\"u}rgen},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=BKE}{%
+         family={Bennin},
+         familyi={B\bibinitperiod},
+         given={Kwabena\bibnamedelima E.},
+         giveni={K\bibinitperiod\bibinitdelim E\bibinitperiod},
+      }}%
+      {{hash=HS}{%
+         family={Hooshangi},
+         familyi={H\bibinitperiod},
+         given={Sara},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=JJ}{%
+         family={Jeuring},
+         familyi={J\bibinitperiod},
+         given={Johan},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=KH}{%
+         family={Keuning},
+         familyi={K\bibinitperiod},
+         given={Hieke},
+         giveni={H\bibinitperiod},
+      }}%
+      {{hash=KC}{%
+         family={Kleiner},
+         familyi={K\bibinitperiod},
+         given={Carsten},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=MB}{%
+         family={MacKellar},
+         familyi={M\bibinitperiod},
+         given={Bonnie},
+         giveni={B\bibinitperiod},
+      }}%
+      {{hash=DR}{%
+         family={Duran},
+         familyi={D\bibinitperiod},
+         given={Rodrigo},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=SH}{%
+         family={St{\"o}rrle},
+         familyi={S\bibinitperiod},
+         given={Harald},
+         giveni={H\bibinitperiod},
+      }}%
+      {{hash=TD}{%
+         family={Toll},
+         familyi={T\bibinitperiod},
+         given={Daniel},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=vAJ}{%
+         prefix={van},
+         prefixi={v\bibinitperiod},
+         family={Assema},
+         familyi={A\bibinitperiod},
+         given={Jelle},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{BJ+1}
+    \strng{fullhash}{BJBKEHSJJKHKCMBDRSHTDAJv1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{B}
+    \field{sortinithash}{B}
+    \verb{doi}
+    \verb 10.1007/s10664-023-10381-0
+    \endverb
+    \field{issn}{1573-7616}
+    \field{number}{6}
+    \field{pages}{128}
+    \field{title}{Developers talking about code quality}
+    \verb{url}
+    \verb https://doi.org/10.1007/s10664-023-10381-0
+    \endverb
+    \field{volume}{28}
+    \field{journaltitle}{Empirical Software Engineering}
+    \field{year}{2023}
+    \warn{\item Invalid format of field 'month'}
+  \endentry
+
   \entry{CHEN201945}{article}{}
     \name{author}{6}{}{%
       {{hash=CH}{%
@@ -188,6 +281,67 @@
     \field{eprinttype}{arXiv}
     \field{eprintclass}{cs.CL}
     \field{year}{2023}
+  \endentry
+
+  \entry{ding2022good}{misc}{}
+    \name{author}{1}{}{%
+      {{hash=DW}{%
+         family={Ding},
+         familyi={D\bibinitperiod},
+         given={Weihao},
+         giveni={W\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{DW1}
+    \strng{fullhash}{DW1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{D}
+    \field{sortinithash}{D}
+    \field{title}{Good Comments vs. Bad Comments}
+    \verb{url}
+    \verb https://www.directimpactsolutions.com/en/good-comments-vs-bad-comment
+    \verb s/
+    \endverb
+    \field{year}{2022}
+  \endentry
+
+  \entry{code-comment-evolution}{inproceedings}{}
+    \name{author}{3}{}{%
+      {{hash=FB}{%
+         family={Fluri},
+         familyi={F\bibinitperiod},
+         given={Beat},
+         giveni={B\bibinitperiod},
+      }}%
+      {{hash=WM}{%
+         family={Wursch},
+         familyi={W\bibinitperiod},
+         given={Michael},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=GHC}{%
+         family={Gall},
+         familyi={G\bibinitperiod},
+         given={Harald\bibnamedelima C.},
+         giveni={H\bibinitperiod\bibinitdelim C\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{FBWMGHC1}
+    \strng{fullhash}{FBWMGHC1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{F}
+    \field{sortinithash}{F}
+    \field{booktitle}{14th Working Conference on Reverse Engineering (WCRE
+  2007)}
+    \verb{doi}
+    \verb 10.1109/WCRE.2007.21
+    \endverb
+    \field{pages}{70\bibrangedash 79}
+    \field{title}{Do Code and Comments Co-Evolve? On the Relation between
+  Source Code and Comment Changes}
+    \field{year}{2007}
   \endentry
 
   \entry{commentAnalysis}{article}{}
@@ -542,6 +696,51 @@
     \warn{\item Can't use 'location' + 'address'}
   \endentry
 
+  \entry{louis2018}{misc}{}
+    \name{author}{4}{}{%
+      {{hash=LA}{%
+         family={Louis},
+         familyi={L\bibinitperiod},
+         given={Annie},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=DSK}{%
+         family={Dash},
+         familyi={D\bibinitperiod},
+         given={Santanu\bibnamedelima Kumar},
+         giveni={S\bibinitperiod\bibinitdelim K\bibinitperiod},
+      }}%
+      {{hash=BET}{%
+         family={Barr},
+         familyi={B\bibinitperiod},
+         given={Earl\bibnamedelima T.},
+         giveni={E\bibinitperiod\bibinitdelim T\bibinitperiod},
+      }}%
+      {{hash=SC}{%
+         family={Sutton},
+         familyi={S\bibinitperiod},
+         given={Charles},
+         giveni={C\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{LA+1}
+    \strng{fullhash}{LADSKBETSC1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{L}
+    \field{sortinithash}{L}
+    \verb{eprint}
+    \verb 1806.04616
+    \endverb
+    \field{title}{Deep Learning to Detect Redundant Method Comments}
+    \verb{url}
+    \verb https://arxiv.org/abs/1806.04616
+    \endverb
+    \field{eprinttype}{arXiv}
+    \field{eprintclass}{cs.SE}
+    \field{year}{2018}
+  \endentry
+
   \entry{codeReadability}{inproceedings}{}
     \name{author}{4}{}{%
       {{hash=OD}{%
@@ -613,6 +812,52 @@
     \field{volume}{1}
     \field{journaltitle}{Empir Software Eng}
     \field{year}{2019}
+  \endentry
+
+  \entry{commentInconsistency}{misc}{}
+    \name{author}{4}{}{%
+      {{hash=RS}{%
+         family={Radmanesh},
+         familyi={R\bibinitperiod},
+         given={Shiva},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=IA}{%
+         family={Imani},
+         familyi={I\bibinitperiod},
+         given={Aaron},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=AI}{%
+         family={Ahmed},
+         familyi={A\bibinitperiod},
+         given={Iftekhar},
+         giveni={I\bibinitperiod},
+      }}%
+      {{hash=MM}{%
+         family={Moshirpour},
+         familyi={M\bibinitperiod},
+         given={Mohammad},
+         giveni={M\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{RS+1}
+    \strng{fullhash}{RSIAAIMM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{R}
+    \field{sortinithash}{R}
+    \verb{eprint}
+    \verb 2409.10781
+    \endverb
+    \field{title}{Investigating the Impact of Code Comment Inconsistency on Bug
+  Introducing}
+    \verb{url}
+    \verb https://arxiv.org/abs/2409.10781
+    \endverb
+    \field{eprinttype}{arXiv}
+    \field{eprintclass}{cs.SE}
+    \field{year}{2024}
   \endentry
 
   \entry{Rani2021}{inproceedings}{}
@@ -913,6 +1158,46 @@
       {Boston}%
     }
     \field{year}{2015}
+  \endentry
+
+  \entry{outdatedComments}{misc}{}
+    \name{author}{3}{}{%
+      {{hash=TWS}{%
+         family={Tan},
+         familyi={T\bibinitperiod},
+         given={Wen\bibnamedelima Siang},
+         giveni={W\bibinitperiod\bibinitdelim S\bibinitperiod},
+      }}%
+      {{hash=WM}{%
+         family={Wagner},
+         familyi={W\bibinitperiod},
+         given={Markus},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=TC}{%
+         family={Treude},
+         familyi={T\bibinitperiod},
+         given={Christoph},
+         giveni={C\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{TWSWMTC1}
+    \strng{fullhash}{TWSWMTC1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{T}
+    \field{sortinithash}{T}
+    \verb{eprint}
+    \verb 2212.01479
+    \endverb
+    \field{title}{Detecting Outdated Code Element References in Software
+  Repository Documentation}
+    \verb{url}
+    \verb https://arxiv.org/abs/2212.01479
+    \endverb
+    \field{eprinttype}{arXiv}
+    \field{eprintclass}{cs.SE}
+    \field{year}{2022}
   \endentry
 \enddatalist
 \endinput
