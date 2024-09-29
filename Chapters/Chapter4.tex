@@ -23,7 +23,8 @@ question:
 In order to validate our heuristic, we concentrated on two datasets: CSN \cite{CSN} and AUGER \cite{AUGER}, selecting a sample of 384 instances from each. This approach was defined aiming to select only datasets which could possibly improve our detection.
 
 \subsection{Data Analysis}
-We manually analyzed the comments from both samples, assigning a value of 0 when the comment did not meet a detection criteria, and 1 when it did. In ambiguous cases, we defaulted to 0. For the purpose of validating our heuristic, we compared its results against our manual annotations, using the metrics of accuracy, precision, recall, and f1score for each criteria. These metrics were computed with the following formulas:
+We manually analyzed the comments from both samples, assigning a value of 0 when the comment did not meet a detection criteria, and 1 when it did. In ambiguous cases, we defaulted to 0. 
+For the purpose of validating our heuristic, we compared its results against our manual annotations, using the metrics of accuracy, precision, recall, and f1score for each criteria. These metrics were computed with the following formulas:
 \begin{equation*}
 	accuracy = \frac{TP + TN}{TP + TN + FP + FN}		
 \end{equation*}
