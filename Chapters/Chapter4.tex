@@ -6,8 +6,8 @@
 
 %----------------------------------------------------------------------------------------
 
-Our goal is to develop a tool capable of detecting lack of quality in comments from large code-related datasets with the highest level of precision possible. In the field of code comment analysis, researchers have explored various metrics and models to evaluate comment quality, categorizing comments in programming languages like \textit{Java} and \textit{Python}. However, to our knowledge, these efforts are limited to only a few languages.
-Looking forward, it is highly likely that researchers will aim to extend these models to cover a broader range of programming languages while improving the accuracy of their assessments. Future works will also increasingly incorporate artificial intelligence (AI) and machine learning techniques, which rely heavily on vast datasets to function effectively. As these approaches evolve, access to high-quality datasets with a large number of diverse instances will become essential.
+Our goal is to develop a tool capable of detecting lack of quality in comments from large code-related datasets with the highest level of precision possible. In the field of code comment analysis, researchers have explored various metrics and models to evaluate comment quality, categorizing comments in programming languages like \textit{Java} and \textit{Python}. However, these efforts are limited to only a few languages.
+Looking forward, it is likely that researchers will aim to extend these models to cover a broader range of programming languages while improving the accuracy of their assessments. Future works will also increasingly incorporate artificial intelligence (AI) and machine learning techniques, which rely heavily on vast datasets to function effectively. As these approaches evolve, access to high-quality datasets with a large number of diverse instances will become essential.
 To achieve this, automating the retrieval of such instances is crucial. This will enable the collection of comprehensive datasets that not only support the refinement of existing comment quality models but also facilitate the development of more robust and versatile tools capable of analyzing code comments across multiple programming languages with precision and scalability.
 
 \section{Study Design}
@@ -20,11 +20,10 @@ question:
 \end{large}
 
 \subsection{Data Collection}
-To validate our heuristic, we focused on two datasets: CSN \cite{CSN} and AUGER \cite{AUGER}. From CSN, we selected a sample of 384 instances, while for AUGER, we used their case-study sample of 100 instances. This approach was defined aiming to select only datasets which could possibly improve our detection.
+In order to validate our heuristic, we concentrated on two datasets: CSN \cite{CSN} and AUGER \cite{AUGER}, selecting a sample of 384 instances from each. This approach was defined aiming to select only datasets which could possibly improve our detection.
 
 \subsection{Data Analysis}
-We manually analyzed the comments from both samples, assigning a value of 0 when the comment did not meet a detection criteria, and 1 when it did. In ambiguous cases, we defaulted to 0.
-We then validated our heuristic by comparing its results against our manual annotations, using the metrics of accuracy, precision, recall, and f1score for each criteria. These metrics were computed with the following formulas:
+We manually analyzed the comments from both samples, assigning a value of 0 when the comment did not meet a detection criteria, and 1 when it did. In ambiguous cases, we defaulted to 0. For the purpose of validating our heuristic, we compared its results against our manual annotations, using the metrics of accuracy, precision, recall, and f1score for each criteria. These metrics were computed with the following formulas:
 \begin{equation*}
 	accuracy = \frac{TP + TN}{TP + TN + FP + FN}		
 \end{equation*}
