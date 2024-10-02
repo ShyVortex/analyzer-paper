@@ -63,7 +63,7 @@ The development of our tool followed a structured, multi-step approach. As outli
 	\label{fig:zoom-cmsquality}
 \end{figure}
 	
-\noindent The "smells" package houses several detectors, but for the purpose of this work, we will focus solely on those that align with the scope of our study. We begin by detailing essential components without which our tool wouldn't function.
+\noindent The "smells" package houses several detectors, but for the purpose of this work, we will focus solely on those that align with the scope of our study. We begin by detailing essential components without which our tool would not function.
 
 \begin{figure}[ht]
 	\centering\includegraphics[width=400pt]{figs/zoom-extra.PNG}
@@ -139,9 +139,9 @@ Define the set of interrogative phrases as:
 \subsection{Short Comments}
 Let T\textit{(i)} = tokenize(text\textit{(i)}) be the list of tokens in the i-th comment.
 
-\noindent Let's define a threshold for short comments as k = 5 (maximum number of tokens).
+\noindent Let us define a threshold for short comments as k = 5 (maximum number of tokens).
 
-\noindent Let's define the short comments condition as isShort\textit{(i)}, where:
+\noindent Let us define the short comments condition as isShort\textit{(i)}, where:
 \begin{equation*}
 	\textbf{isShort}(i) = \begin{cases}
 		1, & \text{if } \mathrm{|T|}_{i} \le k \\
@@ -161,11 +161,11 @@ Let T\textit{(i)} = tokenize(text\textit{(i)}) be the list of tokens in the i-th
 
 \subsection{Long Comments}
 The heuristic is similar to that used for short comments, but in the first case, the comparison is reversed.
-It's inspired by the work of \textit{Steidl et al.} \cite{steidl2013}, but our approach uses tokens rather than words.
+It is inspired by the work of \textit{Steidl et al.} \cite{steidl2013}, but our approach uses tokens rather than words.
 
-\noindent Let's define a threshold for long comments as k = 30 (minimum number of tokens).
+\noindent Let us define a threshold for long comments as k = 30 (minimum number of tokens).
 
-\noindent Let's define the long comments condition as isLong\textit{(i)}, where:
+\noindent Let us define the long comments condition as isLong\textit{(i)}, where:
 \begin{equation*}
 	\textbf{isLong}(i) = \begin{cases}
 		1, & \text{if } \mathrm{|T|}_{i} \ge k \\
@@ -185,7 +185,7 @@ It's inspired by the work of \textit{Steidl et al.} \cite{steidl2013}, but our a
 \subsection{Comments Under Development}
 This heuristic is inspired by the work of \textit{Shi et al.} \cite{buildingRock}.
 
-\noindent Let's define the following sets of keywords:
+\noindent Let us define the following sets of keywords:
 	\begin{itemize}
 		\item \textit{P} = placeholder keywords, e.g., "Description of the Method", "Logic goes here".
 		\item \textit{N} = temporary notes, e.g., "Add more info here", "Temporary fix for issue".
@@ -198,7 +198,7 @@ This heuristic is inspired by the work of \textit{Shi et al.} \cite{buildingRock
 	regexMatch(\textit{i, P, N, D, R, } \mathrm{R}_{M})
 \end{math*} be a function that checks whether any of the patterns defined by \begin{math*}\textit{P, N, D, R, } \mathrm{R}_{M} \end{math*} match the comment text \textit{text(i)}.
 
-\noindent Let's define the under development condition as isUnderDev\textit{(i)}, where:
+\noindent Let us define the under development condition as isUnderDev\textit{(i)}, where:
 \begin{equation*}
 	\textbf{isUnderDev}(i) = \begin{cases}
 		1, & \text{if } \text{regexMatch(i, P, N, D, R, }  \mathrm{R}_{M}) = 1 \\
@@ -219,7 +219,7 @@ Let \textit{SML} represent groups of comments classified by \textit{CommentGroup
 
 \noindent Let \textit{DOC} represent the group of comments classified as documentation by \textit{CommentGroupsDetector}.
 
-\noindent Let's assume we're able to detect different types of comment formats (e.g., \textit{Google}, \textit{NumPy}, \textit{ReST}, \textit{epytext}, \textit{Javadoc}) based on the detected structure of comments and the programming language.
+\noindent Let us assume we are able to detect different types of comment formats (e.g., \textit{Google}, \textit{NumPy}, \textit{ReST}, \textit{epytext}, \textit{Javadoc}) based on the detected structure of comments and the programming language.
 
 \noindent For single-line and multi-line comments, first we have to check whether a comment is written in English.
 \begin{equation*}
@@ -318,7 +318,7 @@ Let \textit{SL} be the group of single-line comments, \textit{ML} the group of m
 	\end{cases}
 \end{equation*}
 
-\noindent Single-line and multi-line comments shouldn't contain any HTML tags, as they are treated as plain text.
+\noindent Single-line and multi-line comments should not contain any HTML tags, as they are treated as plain text.
 Assuming comment $\in$ \textit{SL} $\vee$ comment $\in$ \textit{ML}:
 \begin{equation*}
 	hasTags(comment) = \begin{cases}

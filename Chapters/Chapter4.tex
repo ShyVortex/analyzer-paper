@@ -44,7 +44,7 @@ For the purpose of validating our heuristic, we compared its results against our
 \begin{equation*}
 	f1score = 2 \times \frac{precision \times recall}{precision + recall}
 \end{equation*}
-With the term TP we indicate those comments that are caught by our heuristics in one of the detection criteria. With the term TN we indicate those comments that are not caught by our heuristics in one or any of the detection criteria. With the term FP we indicate those comments that are detected by our heuristic in one of the criteria but actually shouldn't. With the term FN we indicate those comments that aren't detected by our heuristic in one or any of the criteria but actually should.
+With the term TP we indicate those comments that are caught by our heuristics in one of the detection criteria. With the term TN we indicate those comments that are not caught by our heuristics in one or any of the detection criteria. With the term FP we indicate those comments that are detected by our heuristic in one of the criteria but actually should not. With the term FN we indicate those comments that are not detected by our heuristic in one or any of the criteria but actually should.
 
 \newpage
 
@@ -70,7 +70,7 @@ After carefully reviewing the sample multiple times, we arrived at the following
 	
 	\textit{\\}
 	
-	*\textit{Comments Classification} refers to the detector that's able to scan all comments and categorize them in single-line, multi-line and documentation. See paragraph $\ref{sec:logic-construction}$.
+	*\textit{Comments Classification} refers to the detector that is able to scan all comments and categorize them in single-line, multi-line and documentation. See paragraph $\ref{sec:logic-construction}$.
 \end{center}
 
 \noindent From the table above, it can be deduced that our heuristics generally perform well, showing strong metrics in most cases. However, there are some notable caveats. The results for \textit{Empty Comments}, \textit{Comments Asking Questions}, and \textit{Comments Under Development} are visibly less balanced, with lower precision, recall, and F1 scores. This is primarily due to the small number of true positives in these categories, which has skewed the metrics.
