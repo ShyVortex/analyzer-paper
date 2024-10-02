@@ -20,14 +20,10 @@ question:
 \end{large}
 
 \subsection{Data Collection}
-In order to validate our heuristic, we concentrated on two datasets: CSN \cite{CSN} and AUGER \cite{AUGER}, both of which are vastly utilized in literature.
+In order to validate our heuristic, we focused on CSN \cite{CSN}, which is vastly used in literature, selecting a case-study sample of 384 instances from it.
 
 \noindent CSN is a large-scale dataset designed to facilitate semantic code search, which is the process of retrieving relevant code snippets based on natural language queries.
 The dataset includes over 6 million functions from six programming languages, but our subset focuses solely on \textit{Java}.
-
-\noindent AUGER is designed for generating automated review comments in code reviews, using the Text-to-Text Transfer Transformer (T5) pre-trained model. The dataset includes data collected from 11 notable Java open-source projects on GitHub.
-
-\noindent We selected two case-study samples of 384 instances from each dataset.
 
 \subsection{Data Analysis}
 We manually analyzed the comments from both samples, assigning a value of 0 when the comment did not meet a detection criteria, and 1 when it did. In ambiguous cases, we defaulted to 0. 
@@ -95,11 +91,11 @@ After carefully reviewing the sample multiple times, we arrived at the following
 This section discusses the threats to validity of this heuristic. Specifically, (I) construction validity regarding manual testing, (II) internal validity regarding possible impairment of results and (III) external validity regarding the dataset.
 
 \subsection{Construct Validity}
-We have detailed the logic behind our heuristics and described the validation process used to evaluate their effectiveness by extracting key metrics. The heuristics were tested on 384 instances from the \textit{CSN} dataset and 100 instances from \textit{AUGER}. This process involved manually labeling each comment, meaning that any misinterpretation of the comments could potentially compromise the validity of the results. To mitigate this risk, we thoroughly reviewed and examined all comments multiple times to ensure accuracy and reduce the likelihood of errors in interpretation.
+We have detailed the logic behind our heuristics and described the validation process used to evaluate their effectiveness by extracting key metrics. The heuristics were tested on 384 instances from the \textit{CSN} dataset. This process involved manually labeling each comment, meaning that any misinterpretation of the comments could potentially compromise the validity of the results. To mitigate this risk, we thoroughly reviewed and examined all comments multiple times to ensure accuracy and reduce the likelihood of errors in interpretation.
 
 \subsection{Internal Validity}
 To address the research question, we developed heuristics grounded in our knowledge of the domain. This approach involved incorporating our own insights and patterns related to comment analysis, which may have introduced some subjectivity, particularly in the more complex detectors, such as those for incomplete comments and uneven comment formatting. However, we aimed to select rules that are broadly applicable and objective, while maintaining a disciplined approach to minimize subjectivity and ensure consistency in our criteria.
 
 \subsection{External Validity}
-We selected small, random samples from very large datasets, which resulted in analyzing only a limited number of instances relative to the dataset size. This sampling approach may have led to some imbalances in the results. However, our primary goal was to design heuristics that minimized false positives and false negatives. Although we tested these heuristics across a variety of comment categories, certain categories had very few relevant instances, suggesting that the results could be influenced by the specific sample chosen and may not fully generalize to the entire dataset.
+We selected small, random samples from a very large dataset, which resulted in analyzing only a limited number of instances relative to the dataset size. This sampling approach may have led to some imbalances in the results. However, our primary goal was to design heuristics that minimized false positives and false negatives. Although we tested these heuristics across a variety of comment categories, certain categories had very few relevant instances, suggesting that the results could be influenced by the specific sample chosen and may not fully generalize to the entire dataset.
 Additionally, factors such as the programming language used and the presence of external frameworks, which often fall outside the built-in syntax and conventions of the language, could further affect the generalizability of our findings. These factors may limit the ability to extend our results to other datasets or environments without further validation.
