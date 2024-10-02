@@ -51,7 +51,7 @@ With the term TP we indicate those comments that are caught by our heuristics in
 \section{Study Results}
 
 \subsection{CSN}
-After carefully reviewing the sample multiple times, we arrived at the following results:
+After carefully reviewing the sample multiple times, we arrived at the following results*:
 
 \begin{center}
 	\begin{tabular}{|c|c|c|c|c|}
@@ -67,9 +67,13 @@ After carefully reviewing the sample multiple times, we arrived at the following
 		\hline Uneven Comments Format     & 0.87     & 0.93      & 0.83   & 0.88   \\
 		\hline
 	\end{tabular}
+	
+	\textit{\\}
+	
+	*\textit{Comments Classification} refers to the detector that's able to scan all comments and categorize them in single-line, multi-line and documentation. See paragraph $\ref{sec:logic-construction}$.
 \end{center}
 
-\noindent \\ From the table above, it can be deduced that our heuristics generally perform well, showing strong metrics in most cases. However, there are some notable caveats. The results for \textit{Empty Comments}, \textit{Comments Asking Questions}, and \textit{Comments Under Development} are visibly less balanced, with lower precision, recall, and F1 scores. This is primarily due to the small number of true positives in these categories, which has skewed the metrics.
+\noindent From the table above, it can be deduced that our heuristics generally perform well, showing strong metrics in most cases. However, there are some notable caveats. The results for \textit{Empty Comments}, \textit{Comments Asking Questions}, and \textit{Comments Under Development} are visibly less balanced, with lower precision, recall, and F1 scores. This is primarily due to the small number of true positives in these categories, which has skewed the metrics.
 
 \noindent To better understand this issue, we can refer to the confusion matrix values for these categories:
 \begin{center}
