@@ -44,10 +44,48 @@ For the purpose of validating our heuristic, we compared its results against our
 \begin{equation*}
 	f1score = 2 \times \frac{precision \times recall}{precision + recall}
 \end{equation*}
-With the term TP we indicate those comments that are caught by our heuristics in one of the detection criteria. With the term TN we indicate those comments that are not caughty by our heuristics in one or any of the detection criteria. With the term FP we indicate those comments that are detected by our heuristic in one of the criteria but actually shouldn't. With the term FN we indicate those comments that aren't detected by our heuristic in one or any of the criteria but actually should.
+With the term TP we indicate those comments that are caught by our heuristics in one of the detection criteria. With the term TN we indicate those comments that are not caught by our heuristics in one or any of the detection criteria. With the term FP we indicate those comments that are detected by our heuristic in one of the criteria but actually shouldn't. With the term FN we indicate those comments that aren't detected by our heuristic in one or any of the criteria but actually should.
+
+\newpage
 
 \section{Study Results}
-TODO
+
+\subsection{CSN}
+After carefully reviewing the sample multiple times, we arrived at the following results:
+
+\begin{center}
+	\begin{tabular}{|c|c|c|c|c|}
+		\hline
+		& \textbf{Accuracy} & \textbf{Precision} & \textbf{Recall} & \textbf{F1 Score} \\
+		\hline Comments Classification    & 0.84     & 0.87      & 0.85   & 0.86    \\
+		\hline Empty Comments             & 0.97     & 0.63      & 0.67   & 0.65    \\
+		\hline Comments Asking Questions  & 0.98     & 0.40      & 0.33   & 0.36    \\
+		\hline Short Comments             & 0.97     & 0.88      & 0.98   & 0.93    \\
+		\hline Long Comments              & 0.90     & 0.89      & 0.92   & 0.91    \\
+		\hline Comments Under Development & 0.93     & 0.45      & 0.43   & 0.44    \\
+		\hline Incomplete Comments        & 0.86     & 0.94      & 0.89   & 0.92    \\
+		\hline Uneven Comments Format     & 0.87     & 0.93      & 0.83   & 0.88   \\
+		\hline
+	\end{tabular}
+\end{center}
+
+\noindent \\ From the table above, it can be deduced that our heuristics generally perform well, showing strong metrics in most cases. However, there are some notable caveats. The results for \textit{Empty Comments}, \textit{Comments Asking Questions}, and \textit{Comments Under Development} are visibly less balanced, with lower precision, recall, and F1 scores. This is primarily due to the small number of true positives in these categories, which has skewed the metrics.
+
+\noindent To better understand this issue, we can refer to the confusion matrix values for these categories:
+\begin{center}
+	\begin{tabular}{|c|c|c|c|c|}
+		\hline
+		& \textbf{TP} & \textbf{TN} & \textbf{FP} & \textbf{FN} \\
+		\hline Empty Comments             & 10     & 362      & 6   & 5    \\
+		\hline Comments Asking Questions  & 2     & 375      & 3   & 4    \\
+		\hline Comments Under Development & 10     & 349      & 12   & 13    \\
+		\hline
+	\end{tabular}
+\end{center}
+
+\noindent \\ As we can see, the number of true positives (TP) is relatively low in these cases, which significantly impacts the precision, recall, and F1 score. For example, only 2 true positives were identified for \textit{Comments Asking Questions}, which contributes to the low scores despite the high accuracy. Similarly, \textit{Comments Under Development} shows an imbalanced distribution of false positives (FP) and false negatives (FN), further affecting the overall performance.
+
+\noindent We acknowledge that with a different sample, these results might vary, potentially yielding more balanced outcomes. However, the current analysis provides valuable insights into where improvements could be made in future iterations.
 
 \section{Threats to Validity}
 This section discusses the threats to validity of this heuristic. Specifically, (I) construction validity regarding manual testing, (II) internal validity regarding possible impairment of results and (III) external validity regarding the dataset.
@@ -59,4 +97,5 @@ We have detailed the logic behind our heuristics and described the validation pr
 To address the research question, we developed heuristics grounded in our knowledge of the domain. This approach involved incorporating our own insights and patterns related to comment analysis, which may have introduced some subjectivity, particularly in the more complex detectors, such as those for incomplete comments and uneven comment formatting. However, we aimed to select rules that are broadly applicable and objective, while maintaining a disciplined approach to minimize subjectivity and ensure consistency in our criteria.
 
 \subsection{External Validity}
-TODO
+We selected small, random samples from very large datasets, which resulted in analyzing only a limited number of instances relative to the dataset size. This sampling approach may have led to some imbalances in the results. However, our primary goal was to design heuristics that minimized false positives and false negatives. Although we tested these heuristics across a variety of comment categories, certain categories had very few relevant instances, suggesting that the results could be influenced by the specific sample chosen and may not fully generalize to the entire dataset.
+Additionally, factors such as the programming language used and the presence of external frameworks, which often fall outside the built-in syntax and conventions of the language, could further affect the generalizability of our findings. These factors may limit the ability to extend our results to other datasets or environments without further validation.

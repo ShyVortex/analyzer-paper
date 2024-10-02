@@ -9,6 +9,7 @@ main-blx.bib
 main.synctex.gz
 main.pdf
 main.blg
+main.lot
 
 # CHAPTERS output files
 /Chapters/**.aux
