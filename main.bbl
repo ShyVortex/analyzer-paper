@@ -1199,5 +1199,48 @@
     \field{eprintclass}{cs.SE}
     \field{year}{2022}
   \endentry
+
+  \entry{dlCR}{inproceedings}{}
+    \name{author}{4}{}{%
+      {{hash=VA}{%
+         family={Vitale},
+         familyi={V\bibinitperiod},
+         given={Antonio},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=PV}{%
+         family={Piantadosi},
+         familyi={P\bibinitperiod},
+         given={Valentina},
+         giveni={V\bibinitperiod},
+      }}%
+      {{hash=SS}{%
+         family={Scalabrino},
+         familyi={S\bibinitperiod},
+         given={Simone},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=OR}{%
+         family={Oliveto},
+         familyi={O\bibinitperiod},
+         given={Rocco},
+         giveni={R\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{VA+1}
+    \strng{fullhash}{VAPVSSOR1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{V}
+    \field{sortinithash}{V}
+    \verb{doi}
+    \verb 10.1109/ASE56229.2023.00112
+    \endverb
+    \field{pages}{573\bibrangedash 584}
+    \field{title}{Using Deep Learning to Automatically Improve Code
+  Readability}
+    \field{month}{09}
+    \field{year}{2023}
+  \endentry
 \enddatalist
 \endinput
