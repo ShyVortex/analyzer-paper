@@ -6,28 +6,28 @@
 
 %----------------------------------------------------------------------------------------
 
-Our goal is to develop a tool capable of detecting lack of quality in comments from large code-related datasets with the highest level of precision possible. In the field of code comment analysis, researchers have explored various metrics and models to evaluate comment quality, categorizing comments in programming languages like \textit{Java} and \textit{Python}. However, these efforts are limited to only a few languages.
-Looking forward, it is likely that researchers will aim to extend these models to cover a broader range of programming languages while improving the accuracy of their assessments. Future works will also increasingly incorporate artificial intelligence (AI) and machine learning techniques, which rely heavily on vast datasets to function effectively. As these approaches evolve, access to high-quality datasets with a large number of diverse instances will become essential.
-To achieve this, automating the retrieval of such instances is crucial. This will enable the collection of comprehensive datasets that not only support the refinement of existing comment quality models but also facilitate the development of more robust and versatile tools capable of analyzing code comments across multiple programming languages with precision and scalability.
+In this chapter, we present an empirical study aimed at validating the effectiveness of the tool that was developed. We want to create a highly precise system capable of detecting previously outlined deficiencies in code comments, ensuring accurate identification of such.
 
 \section{Study Design}
 The goal of this study is to understand to what extent the proposed heuristics allow to detect true comments lacking quality. Our study is steered by the following research
 question:
 \begin{large}
 	\begin{Center}
-		\textbf{RQ:} With which level of precision is it possible to automatically recognize poor-quality comments in large code-related datasets?
+		\textbf{RQ:} How accurate are our heuristics in detecting poor-quality comment smells in state-of-the-art datasets?
 	\end{Center}
 \end{large}
 
 \subsection{Data Collection}
-In order to validate our heuristic, we focused on CSN \cite{CSN}, which is vastly used in literature, selecting a case-study sample of 384 instances from it.
+In order to validate our heuristic, we focused on \textit{CodeSearchNet} (CSN) \cite{CSN}, which is vastly used in literature, selecting a random sample of 384 instances.
+This number is important as a sample of that size guarantees ±5\% margin of error and 95\% confidence level.
 
 \noindent CSN is a large-scale dataset designed to facilitate semantic code search, which is the process of retrieving relevant code snippets based on natural language queries.
 The dataset includes over 6 million functions from six programming languages, but our subset focuses solely on \textit{Java}.
 
 \subsection{Data Analysis}
-We manually analyzed the comments from both samples, assigning a value of 0 when the comment did not meet a detection criteria, and 1 when it did. In ambiguous cases, we defaulted to 0. 
+We manually analyzed comments from the sample, labeling each with a value of 0 when the comment was not meeting a detection criteria, and 1 otherwise. In ambiguous cases, we defaulted to 0.
 For the purpose of validating our heuristic, we compared its results against our manual annotations, using the metrics of accuracy, precision, recall, and f1score for each criteria. These metrics were computed with the following formulas:
+
 \begin{equation*}
 	accuracy = \frac{TP + TN}{TP + TN + FP + FN}		
 \end{equation*}
@@ -40,27 +40,24 @@ For the purpose of validating our heuristic, we compared its results against our
 \begin{equation*}
 	f1score = 2 \times \frac{precision \times recall}{precision + recall}
 \end{equation*}
-With the term TP we indicate those comments that are caught by our heuristics in one of the detection criteria. With the term TN we indicate those comments that are not caught by our heuristics in one or any of the detection criteria. With the term FP we indicate those comments that are detected by our heuristic in one of the criteria but actually should not. With the term FN we indicate those comments that are not detected by our heuristic in one or any of the criteria but actually should.
 
-\newpage
+\noindent With the term TP we indicate those comments that are caught by our heuristics in one of the detection criteria. With the term TN we indicate those comments that are not caught by our heuristics in one or any of the detection criteria. With the term FP we indicate those comments that are detected by our heuristic in one of the criteria but actually should not. With the term FN we indicate those comments that are not detected by our heuristic in one or any of the criteria but actually should.
 
 \section{Study Results}
-
-\subsection{CSN}
 After carefully reviewing the sample multiple times, we arrived at the following results:
 
 \begin{center}
 	\begin{tabular}{|c|c|c|c|c|}
 		\hline
 		& \textbf{Accuracy} & \textbf{Precision} & \textbf{Recall} & \textbf{F1 Score} \\
-		\hline Comments Classification*    & 0.84     & 0.87      & 0.85   & 0.86    \\
-		\hline Empty Comments             & 0.97     & 0.63      & 0.67   & 0.65    \\
-		\hline Comments Asking Questions  & 0.98     & 0.40      & 0.33   & 0.36    \\
-		\hline Short Comments             & 0.97     & 0.88      & 0.98   & 0.93    \\
-		\hline Long Comments              & 0.90     & 0.89      & 0.92   & 0.91    \\
-		\hline Comments Under Development & 0.93     & 0.45      & 0.43   & 0.44    \\
-		\hline Incomplete Comments        & 0.86     & 0.94      & 0.89   & 0.92    \\
-		\hline Uneven Comments Format     & 0.87     & 0.93      & 0.83   & 0.88   \\
+		\hline Comments Classification*    & 84\%     & 87\%      & 85\%   & 86\%    \\
+		\hline Empty Comments             & 97\%     & 63\%      & 67\%   & 65\%    \\
+		\hline Comments Asking Questions  & 98\%     & 40\%      & 33\%   & 36\%    \\
+		\hline Short Comments             & 97\%     & 88\%      & 98\%   & 93\%    \\
+		\hline Long Comments              & 90\%     & 89\%      & 92\%   & 91\%    \\
+		\hline Comments Under Development & 93\%     & 45\%      & 43\%   & 44\%    \\
+		\hline Incomplete Comments        & 86\%     & 94\%      & 89\%   & 92\%    \\
+		\hline Uneven Comments Format     & 87\%     & 93\%      & 83\%   & 88\%   \\
 		\hline
 	\end{tabular}
 	
@@ -85,8 +82,6 @@ After carefully reviewing the sample multiple times, we arrived at the following
 
 \noindent \\ As we can see, the number of true positives (TP) is relatively low in these cases, which significantly impacts the precision, recall, and F1 score. For example, only 2 true positives were identified for \textit{Comments Asking Questions}, which contributes to the low scores despite the high accuracy. Similarly, \textit{Comments Under Development} shows an imbalanced distribution of false positives (FP) and false negatives (FN), further affecting the overall performance.
 
-\noindent We acknowledge that with a different sample, these results might vary, potentially yielding more balanced outcomes. However, the current analysis provides valuable insights into where improvements could be made in future iterations.
-
 \section{Threats to Validity}
 This section discusses the threats to validity of this heuristic. Specifically, (I) construction validity regarding manual testing, (II) internal validity regarding possible impairment of results and (III) external validity regarding the dataset.
 
@@ -95,6 +90,8 @@ We have detailed the logic behind our heuristics and described the validation pr
 
 \subsection{Internal Validity}
 To address the research question, we developed heuristics grounded in our knowledge of the domain. This approach involved incorporating our own insights and patterns related to comment analysis, which may have introduced some subjectivity, particularly in the more complex detectors, such as those for incomplete comments and uneven comment formatting. However, we aimed to select rules that are broadly applicable and objective, while maintaining a disciplined approach to minimize subjectivity and ensure consistency in our criteria.
+
+\noindent We acknowledge that with different samples, results might vary, potentially yielding more balanced or imbalanced outcomes. However, the current analysis provides valuable insights into where improvements could be made in future iterations.
 
 \subsection{External Validity}
 We selected small, random samples from a very large dataset, which resulted in analyzing only a limited number of instances relative to the dataset size. This sampling approach may have led to some imbalances in the results. However, our primary goal was to design heuristics that minimized false positives and false negatives. Although we tested these heuristics across a variety of comment categories, certain categories had very few relevant instances, suggesting that the results could be influenced by the specific sample chosen and may not fully generalize to the entire dataset.
