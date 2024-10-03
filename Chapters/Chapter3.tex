@@ -5,7 +5,7 @@
 \label{Chapter3}
 
 \section{Theoretical Construction}
-The development of our tool followed a structured, multi-step approach. As outlined in \capref{Chapter1}, to assess comment quality, it was necessary to categorize comments based on specific criteria.
+The development of our tool followed a structured, multi-step approach. As outlined in \capref{Chapter1}, to assess comment quality, it was necessary to categorize comments based on specific criteria, described in the figure below, from the work by \textit{Vitale et al.} -- \textit{Using Deep Learning to Automatically Improve Code Readability} \cite{dlCR}.
 
 \begin{figure}[ht]
 	\centering\includegraphics[height=350pt]{figs/goal-schema.PNG}
@@ -37,7 +37,7 @@ The development of our tool followed a structured, multi-step approach. As outli
 \section{Logic Construction}\label{sec:logic-construction}
 
 \begin{figure}[ht]
-	\centering\includegraphics[width=400pt]{figs/whole-architecture.PNG}
+	\centering\includegraphics[width=450pt]{figs/architecture-v4.PNG}
 	\captionsetup{justification=centering}
 	\caption{General view on the tool's architecture.}
 	\label{fig:whole-architecture}
@@ -45,19 +45,10 @@ The development of our tool followed a structured, multi-step approach. As outli
 
 \noindent Our tool's architecture is structured in multiple layers. For clarity, we begin by outlining the foundational components.
 
-\begin{figure}[ht]
-	\centering\includegraphics[width=400pt]{figs/zoom-data.PNG}
-	\captionsetup{justification=centering}
-	\caption{Zoom on the tool's data package.}
-	\label{fig:zoom-data}
-\end{figure}
-
 \noindent The "data" package defines the supported dataset file formats our tool is able to read, provides a common interface for loading and working with datasets, and handles dataset format conversion when necessary.
-
-\newpage
 	
 \begin{figure}[ht]
-	\centering\includegraphics[width=465pt]{figs/zoom-cmsquality.PNG}
+	\centering\includegraphics[width=450pt]{figs/cmsquality-v2.PNG}
 	\captionsetup{justification=centering}
 	\caption{Zoom on lack of comments quality package.}
 	\label{fig:zoom-cmsquality}
