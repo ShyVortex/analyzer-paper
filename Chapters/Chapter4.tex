@@ -66,7 +66,7 @@ After carefully reviewing the sample multiple times, we arrived at the following
 	*\textit{Comments Classification} refers to the detector that is able to scan all comments and categorize them in single-line, multi-line and documentation. See paragraph $\ref{sec:logic-construction}$.
 \end{center}
 
-\noindent From the table above, it can be deduced that our heuristics generally perform well, showing strong metrics in most cases. However, there are some notable caveats. The results for \textit{Empty Comments}, \textit{Comments Asking Questions}, and \textit{Comments Under Development} are visibly less balanced, with lower precision, recall, and F1 scores. This is primarily due to the small number of true positives in these categories, which has skewed the metrics.
+\noindent From the table above, it can be deduced that our heuristics generally perform well, showing strong metrics in most cases. However, there are some notable caveats. The results for \textit{Empty Comments} and \textit{Comments Asking Questions} are visibly less balanced, with lower precision, recall, and F1 scores. This is primarily due to the small number of true positives in these categories, which has skewed the metrics.
 
 \noindent To better understand this issue, we can refer to the confusion matrix values for these categories:
 \begin{center}
@@ -75,12 +75,11 @@ After carefully reviewing the sample multiple times, we arrived at the following
 		& \textbf{TP} & \textbf{TN} & \textbf{FP} & \textbf{FN} \\
 		\hline Empty Comments             & 10     & 362      & 6   & 5    \\
 		\hline Comments Asking Questions  & 2     & 375      & 3   & 4    \\
-		\hline Comments Under Development & 10     & 349      & 12   & 13    \\
 		\hline
 	\end{tabular}
 \end{center}
 
-\noindent \\ As we can see, the number of true positives (TP) is relatively low in these cases, which significantly impacts the precision, recall, and F1 score. For example, only 2 true positives were identified for \textit{Comments Asking Questions}, which contributes to the low scores despite the high accuracy. Similarly, \textit{Comments Under Development} shows an imbalanced distribution of false positives (FP) and false negatives (FN), further affecting the overall performance.
+\noindent \\ As we can see, the number of true positives (TP) is relatively low in these cases, which significantly impacts the precision, recall, and F1 score. For example, only 2 true positives were identified for \textit{Comments Asking Questions}, which contributes to the low scores despite the high accuracy.
 
 \section{Threats to Validity}
 This section discusses the threats to validity of this heuristic. Specifically, (I) construction validity regarding manual testing, (II) internal validity regarding possible impairment of results and (III) external validity regarding the dataset.
