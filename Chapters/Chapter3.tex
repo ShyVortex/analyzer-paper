@@ -106,15 +106,14 @@ where \textit{strip(text(i))} removes all leading and trailing whitespace from t
 \end{equation*}
 
 \subsection{Comments Asking Questions}
-Define the set of interrogative phrases as:
-\begin{equation*}
-	I = \text{\{"why", "how", "what is", "what\\'s", "where\\'s", "where is", "where are", "how long"\}}
-\end{equation*}
+Let \textit{K} be a set of interrogative keywords usually found at the start of a sentence.
 
-\noindent Then, the condition is isQuestion\textit{(i)}, where:
+\noindent Let \textit{E} be a set of interrogative expressions that can be found anywhere in a sentence.
+
+\noindent Then, we define the condition as isQuestion\textit{(i)}, where:
 \begin{equation*}
 	\textbf{isQuestion}(i) = \begin{cases}
-		1, & \text{if } \text{text}(i) \text{.endswith("?")} \vee \text{text}(i) \text{.startswith}(I) \\
+		1, & \text{if } \text{text}(i) \text{.endswith("?")} \vee \exists \text{subset}(K) : \text{text}(i) \text{.startswith}(subset(K)) \\ & \vee \text{ } \exists \text{subset}(E) \in \text{text}(i) \\
 		0, & \text{ otherwise}
 	\end{cases}
 \end{equation*}
