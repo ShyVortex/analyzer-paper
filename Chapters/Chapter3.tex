@@ -182,17 +182,16 @@ This heuristic is inspired by the work of \textit{Shi et al.} \cite{buildingRock
 		\item \textit{N} = temporary notes, e.g., "Add more info here", "Temporary fix for issue".
 		\item \textit{D} = vague descriptions, e.g., "To be documented", "Work in progress".
 		\item \textit{R} = redundant keys, e.g., "Opens a file", "Calls the method".
+		\item \textit{U} = URL keys, e.g., "https://", "www.", ".com"
 		\item Let $\mathrm{R}_{M}$ represent a set of MIME-type specific patterns to detect commented methods (e.g., method definitions in Java, Python, etc.).
 	\end{itemize}
 	
-\noindent Let\begin{math*}
-	regexMatch(\textit{i, P, N, D, R, } \mathrm{R}_{M})
-\end{math*} be a function that checks whether any of the patterns defined by \begin{math*}\textit{P, N, D, R, } \mathrm{R}_{M} \end{math*} match the comment text \textit{text(i)}.
+\noindent Let regexMatch(\textit{i, P, N, D, R, U, } $\mathrm{R}_{M}$) be a function that checks whether any of the patterns defined by \textit{P, N, D, R, U, } $\mathrm{R}_{M}$ match the comment text \textit{text(i)}.
 
 \noindent Let us define the under development condition as isUnderDev\textit{(i)}, where:
 \begin{equation*}
 	\textbf{isUnderDev}(i) = \begin{cases}
-		1, & \text{if } \text{regexMatch(i, P, N, D, R, }  \mathrm{R}_{M}) = 1 \\
+		1, & \text{if } \text{regexMatch(i, P, N, D, R, U, }  \mathrm{R}_{M}) = 1 \\
 		0, & \text{ otherwise}
 	\end{cases}
 \end{equation*}
