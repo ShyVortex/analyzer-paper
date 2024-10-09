@@ -18,11 +18,13 @@ question:
 \end{large}
 
 \subsection{Data Collection}
-In order to validate our heuristic, we focused on \textit{CodeSearchNet} (CSN) \cite{CSN}, which is vastly used in literature, selecting a random sample of 384 instances.
+In order to validate our heuristic, we concentrated on: \textit{CodeSearchNet} (CSN) \cite{CSN} and \textit{Automatically Generating Review Comments with Pre-training Models} (AUGER) \cite{AUGER}, both vastly used in literature, selecting from each two random samples of 384 instances.
 This number is important as a sample of that size guarantees ±5\% margin of error and 95\% confidence level.
 
 \noindent CSN is a large-scale dataset designed to facilitate semantic code search, which is the process of retrieving relevant code snippets based on natural language queries.
 The dataset includes over 6 million functions from six programming languages, but our subset focuses solely on \textit{Java}.
+
+\noindent AUGER is designed for generating automated review comments in code reviews, using the Text-to-Text Transfer Transformer (T5) pre-trained model. The dataset includes data collected from 11 notable Java open-source projects on GitHub.
 
 \subsection{Data Analysis}
 We manually analyzed comments from the sample, labeling each with a value of 0 when the comment was not meeting a detection criteria, and 1 otherwise. In ambiguous cases, we defaulted to 0.
@@ -44,6 +46,7 @@ For the purpose of validating our heuristic, we compared its results against our
 \noindent With the term TP we indicate those comments that are caught by our heuristics in one of the detection criteria. With the term TN we indicate those comments that are not caught by our heuristics in one or any of the detection criteria. With the term FP we indicate those comments that are detected by our heuristic in one of the criteria but actually should not. With the term FN we indicate those comments that are not detected by our heuristic in one or any of the criteria but actually should.
 
 \section{Study Results}
+\subsection{CSN}
 After carefully reviewing the sample multiple times, we arrived at the following results:
 
 \begin{center}
@@ -82,11 +85,32 @@ After carefully reviewing the sample multiple times, we arrived at the following
 
 \noindent \\ As we can see, the number of true positives (TP) is relatively low in these cases, which significantly impacts the precision, recall, and F1 score. For example, only 3 true positives were identified for \textit{Comments Asking Questions}, which contributes to the other low scores despite high accuracy. Meanwhile, \textit{Comments Under Development} shows a relatively high number of false negatives (FP) which affects recall and F1 score despite high accuracy and precision.
 
+\subsection{AUGER}
+Repeating the same process as previously applied for \textit{CSN}, we arrived at the following results:
+
+\begin{center}
+	\begin{tabular}{|c|c|c|c|c|}
+		\hline
+		& \textbf{Accuracy} & \textbf{Precision} & \textbf{Recall} & \textbf{F1 Score} \\
+		\hline Comments Classification    & 97\%     & 98\%      & 95\%   & 97\%    \\
+		\hline Empty Comments             & 99\%     & 63\%      & 71\%   & 67\%    \\
+		\hline Comments Asking Questions  & 97\%     & 96\%      & 95\%   & 95\%    \\
+		\hline Short Comments             & 92\%     & 81\%      & 90\%   & 85\%    \\
+		\hline Long Comments              & 94\%     & 95\%      & 92\%   & 93\%    \\
+		\hline Comments Under Development & 77\%     & 78\%      & 61\%   & 69\%    \\
+		\hline Incomplete Comments        & 84\%     & 94\%      & 73\%   & 82\%    \\
+		\hline Uneven Comments Format     & 77\%     & 81\%      & 61\%   & 70\%   \\
+		\hline
+	\end{tabular}
+\end{center}
+
+\noindent Overall, we achieved similar results across both datasets, though with some differences. Since \textit{AUGER} is a dataset specifically for code review comments, it contained a lot more instances of comments asking questions and comments under development compared to \textit{CSN}. This contributed to higher detection rates in both categories. However, only in the case of \textit{Comments Under Development}, our manual analysis identified more instances than the tool was able to detect, resulting so in more positive results for \textit{Comments Asking Questions} and more negative results for \textit{Comments Under Development} regarding accuracy and precision compared to \textit{CSN}. Additionally, \textit{AUGER} had fewer examples of unevenly formatted comments, leading to lower scores in that area. These variations highlight the differing nature of the datasets and their influence on the tool's performance across specific categories.
+
 \section{Threats to Validity}
 This section discusses the threats to validity of this heuristic. Specifically, (I) construction validity regarding manual testing, (II) internal validity regarding possible impairment of results and (III) external validity regarding the dataset.
 
 \subsection{Construct Validity}
-We have detailed the logic behind our heuristics and described the validation process used to evaluate their effectiveness by extracting key metrics. The heuristics were tested on 384 instances from the \textit{CSN} dataset. This process involved manually labeling each comment, meaning that any misinterpretation of the comments could potentially compromise the validity of the results. To mitigate this risk, we thoroughly reviewed and examined all comments multiple times to ensure accuracy and reduce the likelihood of errors in interpretation.
+We have detailed the logic behind our heuristics and described the validation process used to evaluate their effectiveness by extracting key metrics. The heuristics were tested on 384 instances from the datasets of \textit{CSN} and \textit{AUGER}. This process involved manually labeling each comment, meaning that any misinterpretation of the comments could potentially compromise the validity of the results. To mitigate this risk, we thoroughly reviewed and examined all comments multiple times to ensure accuracy and reduce the likelihood of errors in interpretation.
 
 \subsection{Internal Validity}
 To address the research question, we developed heuristics grounded in our knowledge of the domain. This approach involved incorporating our own insights and patterns related to comment analysis, which may have introduced some subjectivity, particularly in the more complex detectors, such as those for incomplete comments and uneven comment formatting. However, we aimed to select rules that are broadly applicable and objective, while maintaining a disciplined approach to minimize subjectivity and ensure consistency in our criteria.
@@ -94,5 +118,5 @@ To address the research question, we developed heuristics grounded in our knowle
 \noindent We acknowledge that with different samples, results might vary, potentially yielding more balanced or imbalanced outcomes. However, the current analysis provides valuable insights into where improvements could be made in future iterations.
 
 \subsection{External Validity}
-We selected small, random samples from a very large dataset, which resulted in analyzing only a limited number of instances relative to the dataset size. This sampling approach may have led to some imbalances in the results. However, our primary goal was to design heuristics that minimized false positives and false negatives. Although we tested these heuristics across a variety of comment categories, certain categories had very few relevant instances, suggesting that the results could be influenced by the specific sample chosen and may not fully generalize to the entire dataset.
+We selected small, random samples from very large datasets, which resulted in analyzing only a limited number of instances relative to the dataset size. This sampling approach may have led to some imbalances in the results. However, our primary goal was to design heuristics that minimized false positives and false negatives. Although we tested these heuristics across a variety of comment categories, certain categories had very few relevant instances, suggesting that the results could be influenced by the specific sample chosen and may not fully generalize to the entire dataset.
 Additionally, factors such as the programming language used and the presence of external frameworks, which often fall outside the built-in syntax and conventions of the language, could further affect the generalizability of our findings. These factors may limit the ability to extend our results to other datasets or environments without further validation.
