@@ -17,7 +17,7 @@ The development of our tool followed a structured, multi-step approach. As outli
 \begin{itemize}
 	\item \textbf{Empty comments}: these provide no value or clarity and should be flagged for immediate attention.
 	\item \textbf{Comments asking questions}: whether direct or implied, questions undermine the purpose of comments, which should provide clear and definitive information.
-	\item \textbf{Short comments}: these fail to offer sufficient context or detail, leaving readers without a clear understanding of the code’s functionality or purpose.
+	\item \textbf{Short comments}: these fail to offer sufficient context or detail, leaving readers without a clear understanding of the code functionality or purpose.
 	\item \textbf{Long comments}: excessively detailed comments can overwhelm readers, leading to confusion and obscuring the main point of the explanation.
 	\item \textbf{Comments under development}: these temporary, technical comments are relevant only to active developers and must be regularly updated or removed as the system evolves.
 	\item \textbf{Incomplete comments}: these lack full explanations, leaving gaps in the intended message, making them unclear or difficult to understand.
@@ -63,13 +63,13 @@ The development of our tool followed a structured, multi-step approach. As outli
 	\label{fig:zoom-extra}
 \end{figure}
 
-\noindent Initially, we aimed for the tool to be language-agnostic, meaning it would work with all programming languages. While this is true for some detectors, it’s not feasible for all. As a result, we introduced a programming language detector, represented by the "code\_language\_mime" sub-package and its corresponding \textit{LanguageDetector} class.
+\noindent Initially, we aimed for the tool to be language-agnostic, meaning it would work with all programming languages. While this is true for some detectors, it is not feasible for all. As a result, we introduced a programming language detector, represented by the "code\_language\_mime" sub-package and its corresponding \textit{LanguageDetector} class.
 
 \noindent The \textit{CommentGroupsDetector} scans all comments in the input database and categorizes them as single-line, multi-line, or documentation comments. This classification is crucial for enabling the incomplete comments detector and the uneven comments format detector to function correctly.
 
 \noindent An additional detector, the \textit{CoherenceQualityDetector}, resides in the 
 
-\noindent "coherence\_and\_quality" sub-package. This detector was developed while researching comment completeness, but it doesn’t strictly relate to incomplete comments, so it was placed in a separate package. The detector evaluates comments based on the following criteria:
+\noindent "coherence\_and\_quality" sub-package. This detector was developed while researching comment completeness, but it does not strictly relate to incomplete comments, so it was placed in a separate package. The detector evaluates comments based on the following criteria:
 	\begin{itemize}
 		\item \textbf{Language (L)}: ensures the comment is not written in a mix of different languages.
 		\item \textbf{Clarity (C)}: uses NLP techniques to assess the readability of the comment.

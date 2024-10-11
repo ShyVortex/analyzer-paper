@@ -18,8 +18,8 @@ question:
 \end{large}
 
 \subsection{Data Collection}
-In order to validate our heuristic, we concentrated on: \textit{CodeSearchNet} (CSN) \cite{CSN} and \textit{Automatically Generating Review Comments with Pre-training Models} (AUGER) \cite{AUGER}, both vastly used in literature, selecting from each two random samples of 384 instances.
-This number is important as a sample of that size guarantees ±5\% margin of error and 95\% confidence level.
+In order to validate our heuristic, we focused on: \textit{CodeSearchNet} (CSN) \cite{CSN} and \textit{Automatically Generating Review Comments with Pre-training Models} (AUGER) \cite{AUGER} datasets, both vastly used in literature, selecting from each two random samples of 384 instances.
+This number is important as a sample of this size guarantees ±5\% margin of error and 95\% confidence level.
 
 \noindent CSN is a large-scale dataset designed to facilitate semantic code search, which is the process of retrieving relevant code snippets based on natural language queries.
 The dataset includes over 6 million functions from six programming languages, but our subset focuses solely on \textit{Java}.
@@ -104,7 +104,7 @@ Repeating the same process as previously applied for \textit{CSN}, we arrived at
 	\end{tabular}
 \end{center}
 
-\noindent Overall, we achieved similar results across both datasets, though with some differences. Since \textit{AUGER} is a dataset specifically for code review comments, it contained a lot more instances of comments asking questions and comments under development compared to \textit{CSN}. This contributed to higher detection rates in both categories. However, only in the case of \textit{Comments Under Development}, our manual analysis identified more instances than the tool was able to detect, resulting so in more positive results for \textit{Comments Asking Questions} and more negative results for \textit{Comments Under Development} regarding accuracy and precision compared to \textit{CSN}. Additionally, \textit{AUGER} had fewer examples of unevenly formatted comments, leading to lower scores in that area. These variations highlight the differing nature of the datasets and their influence on the tool's performance across specific categories.
+\noindent Overall, we achieved similar results across both datasets, though with some differences. Since \textit{AUGER} is a dataset specifically for code review comments, it contained a lot more instances of comments asking questions and comments under development compared to \textit{CSN}. This contributed to higher detection rates in both categories. However, only in the case of \textit{Comments Under Development}, our manual analysis identified more instances than the tool was able to detect, resulting in more positive results for \textit{Comments Asking Questions} and more negative results for \textit{Comments Under Development} regarding accuracy and precision compared to \textit{CSN}. Additionally, \textit{AUGER} had fewer examples of unevenly formatted comments, leading to lower scores in that area. These variations highlight the differing nature of the datasets and their influence on the tool's performance across specific categories.
 
 \section{Threats to Validity}
 This section discusses the threats to validity of this heuristic. Specifically, (I) construction validity regarding manual testing, (II) internal validity regarding possible impairment of results and (III) external validity regarding the dataset.
