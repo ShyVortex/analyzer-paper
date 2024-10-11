@@ -83,9 +83,7 @@ If a comment meets all these criteria, it is considered coherent. Otherwise, it 
 We will list the heuristics for each category related to the lack of comment quality.
 In all cases, the following notations can be used: let \textit{C} be a code block to be analyzed, let \textit{M} be the MIME type of the code block, let \textit{extract(C, M)} be a method that extracts comments from \textit{C} based on MIME type \textit{M}.
 
-\noindent Let \textit{comment(i)} represent the i-th comment in the extracted list of comments from \textit{C}.
-
-\noindent Let \textit{text(i)} represent the text of the i-th comment.
+\noindent Let \textit{text(i)} represent the text of the i-th comment in the extracted list of comments from \textit{C}.
 
 \subsection{Empty Comments}
 \noindent Let isEmpty\textit{(i)} be the empty comment condition: 
@@ -127,7 +125,7 @@ Let \textit{K} be a set of interrogative keywords usually found at the start of 
 \end{equation*}
 
 \subsection{Short Comments}
-Let T\textit{(i)} = tokenize(text\textit{(i)}) be the list of tokens in the i-th comment.
+Let $\mathrm{|T|}_{i}$ = tokenize(text\textit{(i)}) be the number of tokens in the i-th comment.
 
 \noindent Let us define a threshold for short comments as k = 5 (maximum number of tokens).
 
@@ -212,33 +210,33 @@ Let \textit{SML} represent groups of comments classified by \textit{CommentGroup
 
 \noindent For single-line and multi-line comments, first we have to check whether a comment is written in English.
 \begin{equation*}
-	\mathrm{F}_{english}(comment) = \begin{cases}
-		1, & \text{if the comment} \in \textit{SML } \wedge \text{ is classified as English} \\
-		0, & \text{if the comment} \in \textit{SML } \text{ but is in a different language}
+	\mathrm{F}_{english}(i) = \begin{cases}
+		1, & \text{if comment } i \in \textit{SML } \wedge \text{ text}(i) \text{ detected as English} \\
+		0, & \text{if comment } i \in \textit{SML } \wedge \text{ text}(i) \text{ NOT detected as English}
 	\end{cases}
 \end{equation*}
 
 \noindent Then, we check the syntactic completeness of a comment by verifying if each sentence contains a subject and a predicate, assuming the comment $\in$ \textit{SML}.
 \begin{equation*}
-	\mathrm{F}_{syntax}(comment) = \begin{cases}
-		1, & \text{if  } \exists \text{sentence} \in \text{comment syntactically incomplete} \\
+	\mathrm{F}_{syntax}(i) = \begin{cases}
+		1, & \text{if  } \exists \text{sentence} \in \text{comment } i \text{ syntactically incomplete} \\
 		0, & \text{if all sentences are complete}
 	\end{cases}
 \end{equation*}
 
 \noindent Lastly, we evaluate whether a comment, assumed $\in$ \textit{SML}, is gibberish using a pre-trained model \cite{gibberishDetector} that classifies comments into various categories.
 \begin{equation*}
-	\mathrm{F}_{gibberish}(comment) = \begin{cases}
-		1, & \text{if  } \exists \text{sentence} \in \text{comment classified as gibberish} \\
+	\mathrm{F}_{gibberish}(i) = \begin{cases}
+		1, & \text{if  } \exists \text{sentence} \in \text{comment } i \text{classified as gibberish} \\
 		0, & \text{if all sentences are clean}
 	\end{cases}
 \end{equation*}
 
 \noindent For documentation comments, we must check if a comment is missing any critical part in annotation tags (wrong number of params, lack of return type) compared to the code block it refers to.
 
-\noindent Let $\mathrm{P}_{comment}$ represent the number of @param annotations in the comment, assuming comment $\in$ \textit{DOC}.
+\noindent Let $\mathrm{P}_{i}$ represent the number of \textit{@param} annotations in the comment, assuming comment $\in$ \textit{DOC}.
 
-\noindent Let $\mathrm{R}_{comment}$ represent the number of @return annotations in the comment (which can be only 0 or 1), assuming comment $\in$ \textit{DOC}.
+\noindent Let $\mathrm{R}_{\textit{ i}}$ represent the number of \textit{@return} annotations in the comment (which can be only 0 or 1), assuming comment $\in$ \textit{DOC}.
 
 \noindent We check the number of parameters in the function signature.
 \begin{equation*}
@@ -264,22 +262,22 @@ Let \textit{SML} represent groups of comments classified by \textit{CommentGroup
 		\item The comment contains gibberish.
 	\end{enumerate}
 	
-\noindent Thus, the overall incompleteness function for single-line or multi-line comments $\mathrm{F}_{incomplete}^{\textit{ SML}}$ can be expressed as:
+\noindent Thus, the overall incompleteness function for the i-th single-line or multi-line comment $\mathrm{F}_{incomplete}^{\textit{ SML}}$ \text{} can be expressed as:
 \begin{equation*}
-	\mathrm{F}_{incomplete}^{\textit{ SML}} = \begin{cases}
-		1, & \text{if } \mathrm{F}_{english}(comment) = 1 \wedge \mathrm{F}_{syntax}(comment) = 1 \wedge \mathrm{F}_{gibberish}(comment) = 1 \\
+	\mathrm{F}_{incomplete}^{\textit{ SML}}(i) = \begin{cases}
+		1, & \text{if } \mathrm{F}_{english}(i) = 1 \wedge \mathrm{F}_{syntax}(i) = 1 \wedge \mathrm{F}_{gibberish}(i) = 1 \\
 		0, & \text{otherwise}
 	\end{cases}
 \end{equation*}
 
 \noindent For a documentation comment to be incomplete, it means there is either a mismatch between the number of \textit{@param} annotations and the actual number of parameters, or a mismatch between the presence of a \textit{@return} annotation and whether the function actually returns a value.
 
-\noindent This implies that the incompleteness function for documentation comments $\mathrm{F}_{incomplete}^{\textit{ DOC}}$ can be expressed as:
+\noindent This implies that the incompleteness function for the i-th documentation comment in the code block \textit{C}, \text{ } $\mathrm{F}_{incomplete}^{\textit{ DOC}}$ \text{} can be expressed as:
 \begin{equation*}
-	\mathrm{F}_{incomplete}^{\textit{ DOC}} = \begin{cases}
-		1, & \text{if } \mathrm{P}_{comment} \ne \mathrm{F}_{params}(C) \\
-		1, & \text{if } \mathrm{R}_{comment} = 1 \wedge \mathrm{F}_{return}(C) = 0 \\
-		1, & \text{if } \mathrm{R}_{comment} = 0 \wedge \mathrm{F}_{return}(C) = 1 \\
+	\mathrm{F}_{incomplete}^{\textit{ DOC}}(\textit{C, i}) = \begin{cases}
+		1, & \text{if } \mathrm{P}_{i} \ne \mathrm{F}_{params}(C) \\
+		1, & \text{if } \mathrm{R}_{\textit{ i}} = 1 \wedge \mathrm{F}_{return}(C) = 0 \\
+		1, & \text{if } \mathrm{R}_{\textit{ i}} = 0 \wedge \mathrm{F}_{return}(C) = 1 \\
 		0, & \text{otherwise}
 	\end{cases}
 \end{equation*}
@@ -299,10 +297,10 @@ Let \textit{SL} be the group of single-line comments, \textit{ML} the group of m
 
 \noindent Let \textit{K} be the maximum number of spaces allowed per sentence.
 
-\noindent We have a function that checks whether there are too many spaces (more than \textit{K} consecutive) in any sentence from the comment, which could indicate indentation issues.
+\noindent We have a function that checks whether there are too many spaces (more than \textit{K} consecutive) in any sentence from the i-th comment, which could indicate indentation issues.
 \begin{equation*}
-	\mathrm{F}_{spacing}(comment) = \begin{cases}
-		1, & \text{if } \exists S \in comment : spaces(S) > K \\
+	\mathrm{F}_{spacing}(i) = \begin{cases}
+		1, & \text{if } \exists S \in \text{comment } \textit{ i } : \text{ spaces}(S) > K \\
 		0, & \text{otherwise}
 	\end{cases}
 \end{equation*}
@@ -310,37 +308,39 @@ Let \textit{SL} be the group of single-line comments, \textit{ML} the group of m
 \noindent Single-line and multi-line comments should not contain any HTML tags, as they are treated as plain text.
 Assuming comment $\in$ \textit{SL} $\vee$ comment $\in$ \textit{ML}:
 \begin{equation*}
-	hasTags(comment) = \begin{cases}
-		1, & \text{if } \exists T \subset TAGS : T \in comment \\
+	\text{hasTags}(i) = \begin{cases}
+		1, & \text{if } \exists T \subset TAGS : T \in \text{comment } \textit{i} \\
 		0, & \text{otherwise}
 	\end{cases}
 \end{equation*}
 
-\noindent For a single-line comment to be uneven, we check the number of spaces or if it matches the multi-line format.
+\noindent For the i-th single-line comment to be uneven, we check the number of spaces or if it matches the multi-line format.
 \begin{equation*}
-	\mathrm{F}_{uneven}^{\textit{ SL}}(comment, MF) = \begin{cases}
-		1, & \text{if } \mathrm{F}_{spacing} = 1 \vee hasTags(comment) = 1 \vee match(comment, MF) \\
+	\mathrm{F}_{uneven}^{\textit{ SL}}(\textit{i, MF}) = \begin{cases}
+		1, & \text{if } \mathrm{F}_{spacing}(i) = 1 \vee \text{hasTags}(i) = 1 \vee match(\textit{i, MF}) \\
 		0, & \text{otherwise}
 	\end{cases}
 \end{equation*}
 
-\noindent For a multi-line comment to be uneven, we do the opposite.
+\noindent For the i-th multi-line comment to be uneven, we do the opposite.
 \begin{equation*}
-	\mathrm{F}_{uneven}^{\textit{ ML}}(comment, SF) = \begin{cases}
-		1, & \text{if } \mathrm{F}_{spacing} = 1 \vee hasTags(comment) = 1 \vee match(comment, SF) \\
+	\mathrm{F}_{uneven}^{\textit{ ML}}(\textit{i, SF}) = \begin{cases}
+		1, & \text{if } \mathrm{F}_{spacing}(i) = 1 \vee \text{hasTags}(i) = 1 \vee match(\textit{i, SF}) \\
 		0, & \text{otherwise}
 	\end{cases}
 \end{equation*}
 
 \noindent For documentation comments, we have a function that checks for irregularities in the use of annotation tags (e.g, wrong indentation, empty annotation, wrong token after annotation, ends with annotation). In particular, if the annotation is \textit{@author} and the following token is a verb, it makes no sense. If the annotation is followed by a redundant token (e.g, @return nothing), it should be avoided.
 
+\newpage
+
 \noindent Let \textit{RDT} be an array of possible redundant words after an annotation (e.g, author, param, nothing, none, void).
-Assume comment $\in$ \textit{DOC}, and the current token is an annotation.
+Assume i-th comment $\in$ \textit{DOC}, and the current token is an annotation.
 \begin{equation*}
-	\mathrm{F}_{irr}^{\textit{ DOC}}(comment) = \begin{cases}
-		1, & \text{if } \text{token} = \textit{'@author'} \wedge \text{token\textit{.next}} \in \text{'VERB'} \\
-		1, & \text{if } isSpace(token.next) = 1 \wedge \mathrm{F}_{spacing} = 1 \\
-		1, & \text{if } isEmpty(token.next) = 1 \\
+	\mathrm{F}_{uneven}^{\textit{ DOC}}(i) = \begin{cases}
+		1, & \text{if } \text{token} = \textit{'@author'} \wedge token.next \in \textit{'VERB'} \\
+		1, & \text{if } \text{isSpace}(token.next) = 1 \wedge \mathrm{F}_{spacing}(i) = 1 \\
+		1, & \text{if } \text{isEmpty}(token.next) = 1 \\
 		1, & \text{if } token.next \in RDT \\
 		0, & \text{otherwise}
 	\end{cases}
